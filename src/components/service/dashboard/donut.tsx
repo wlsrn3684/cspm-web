@@ -259,6 +259,7 @@ export default function Donut(props: IDonutProps): JSX.Element {
         })
         .on("mouseout", () => {
           div.transition().duration(400).style("opacity", 0);
+          div.style("left", 0 + "px").style("top", 0 + "px");
         })
         .on("mousemove", (d: any, i: any) => {
           const elements = document.getElementsByClassName("arc");
