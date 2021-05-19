@@ -19,7 +19,7 @@ body,
 
 .App {
   display: flex;
-  height: fit-content !important;
+  height: fit-content;
 }
 
 .Content {

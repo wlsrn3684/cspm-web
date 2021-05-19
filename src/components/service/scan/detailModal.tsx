@@ -76,37 +76,19 @@ export default function Modal(props: IModalProps) {
           variant="contained"
           color="primary"
           onClick={async () => {
-            if (comment == "") {
-              Swal.fire({
-                icon: "error",
-                title: "comment 값이 비어있습니다.",
-                text: "comment를 입력해주세요",
-                heightAuto: false,
-              });
-              return;
-            } else if (comment == props.info.comment) {
-              Swal.fire({
-                icon: "error",
-                title: "comment 값이 변경되지 않았습니다",
-                text: "comment를 변경해주세요",
-                heightAuto: false,
-              });
-              return;
-            }
-
             await fetch(
               `${API_SERVER_URL}/assessment-results/${props.info.id}`,
               requestInit("PUT", {
-                result: result,
+                result: "Y",
                 interview: true,
-                interviewContent: comment,
+                interviewContent: "comment",
               })
             );
 
             props.setInfo({
               id: props.info.id,
-              result: result,
-              comment: comment,
+              result: "Y",
+              comment: "comment",
               isFetch: true,
             });
 

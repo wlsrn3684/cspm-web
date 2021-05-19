@@ -102,7 +102,7 @@ export default function Scan() {
                   operator: "",
                   platform: "",
                   service: "",
-                  startDate: x.startDate,
+                  startDate: x.startDate.split(".")[0],
                   status: x.status,
                   type: "",
                 };

@@ -32,6 +32,12 @@ interface IFetchData {
   regionName: string;
 }
 
+interface IInfo {
+  historyId: string;
+  assessmentId: string;
+  date: string;
+}
+
 export default function AssetDetail({ location }: any): JSX.Element {
   const query = qs.parse(location.search, {
     ignoreQueryPrefix: true,
@@ -102,22 +108,27 @@ export default function AssetDetail({ location }: any): JSX.Element {
               .then((res2) => res2.json())
               .then(async (res2) => {
                 if (res2.length > 0) {
-                  if (res2[0].history.historyId != historyId) {
-                    historyId = res2[0].history.historyId;
-
-                    await fetch(
-                      `http://localhost:4000/api/history/id?id=${res2[0].history.historyId}`
-                    )
-                      .then((res3) => res3.json())
-                      .then(async (res3) => {
-                        if (res3.history) {
-                          assessment_id = res3.history.assessment_id;
-                          date = res3.history.start_date;
-                        }
-                      });
-                  }
-
                   await res2.map(async (x: any) => {
+                    let infoCheck = true;
+
+                    if (historyId == x.history.historyIds) {
+                      infoCheck = false;
+                    }
+
+                    if (infoCheck) {
+                      await fetch(
+                        `http://localhost:4000/api/history/id?id=${x.history.historyId}`
+                      )
+                        .then((res3) => res3.json())
+                        .then(async (res3) => {
+                          if (res3.history) {
+                            date = res3.history.start_date.split(".")[0];
+                            assessment_id = res3.history.assessment_id;
+                            historyId = x.history.historyId;
+                          }
+                        });
+                    }
+
                     let chk = "";
 
                     for (let i = 0; i < 3 - String(x.chkIndex).length; i++) {

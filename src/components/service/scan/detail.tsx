@@ -141,7 +141,7 @@ export default function ScanDetail({ location }: any): JSX.Element {
                     chkIndex: y.chkIndex,
                     name: name,
                     risk: risk,
-                    date: res.history.start_date,
+                    date: res.history.start_date.split(".")[0],
                     status: y.result,
                     summary: JSON.parse(
                       result.replace(/True/g, "true").replace(/False/g, "false")

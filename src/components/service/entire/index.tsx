@@ -120,7 +120,7 @@ export default function Entire() {
             o.vuln.middle_count = res2.history.middle_count;
             o.vuln.low_total = res2.history.low_total;
             o.vuln.low_count = res2.history.low_count;
-            o.lastDate = res2.history.start_date;
+            o.lastDate = res2.history.start_date.split(".")[0];
           } else {
             o.vuln.high_total = "0";
             o.vuln.high_count = "0";

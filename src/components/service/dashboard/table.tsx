@@ -74,7 +74,7 @@ export default function Table(props: ITableProps): JSX.Element {
               >
                 <td>{o.service}</td>
                 <td>{o.platform}</td>
-                <td>{o.lastDate}</td>
+                <td>{o.lastDate.split(".")[0]}</td>
                 <td>
                   <div className={classes.vulnWrapper}>
                     <div className={classes.high}>{o.vuln.high_count}</div>
