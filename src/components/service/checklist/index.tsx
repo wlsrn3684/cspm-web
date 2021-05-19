@@ -61,6 +61,16 @@ export default function Checklist() {
       <div className={classes.header}>
         <div className={classes.headerText}>체크리스트</div>
         <Button
+          variant={category === "IAM" ? "contained" : "outlined"}
+          color="primary"
+          className={classes.headerButton}
+          onClick={() => {
+            setCategory("IAM");
+          }}
+        >
+          IAM
+        </Button>
+        <Button
           variant={category === "EC2" ? "contained" : "outlined"}
           color="primary"
           className={classes.headerButton}
@@ -69,16 +79,6 @@ export default function Checklist() {
           }}
         >
           EC2
-        </Button>
-        <Button
-          variant={category === "EBS" ? "contained" : "outlined"}
-          color="primary"
-          className={classes.headerButton}
-          onClick={() => {
-            setCategory("EBS");
-          }}
-        >
-          EBS
         </Button>
         <Button
           variant={category === "S3" ? "contained" : "outlined"}
@@ -160,6 +160,16 @@ export default function Checklist() {
         >
           KMS
         </Button>
+        <Button
+          variant={category === "EBS" ? "contained" : "outlined"}
+          color="primary"
+          className={classes.headerButton}
+          onClick={() => {
+            setCategory("EBS");
+          }}
+        >
+          EBS
+        </Button>
         <div className={classes.reportWrapper}>
           <Button
             variant="contained"
@@ -169,9 +179,13 @@ export default function Checklist() {
               document.getElementById("download")?.click();
             }}
           >
-            Detail Report Download
+            {`${category} Report Download`}
           </Button>
-          <a id="download" href="/checklist/AWS.png" download />
+          <a
+            id="download"
+            href={`/checklist/레포트_${category}.xlsx`}
+            download
+          />
         </div>
       </div>
 
