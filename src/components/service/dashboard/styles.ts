@@ -223,6 +223,117 @@ export const groupedBarStyles = makeStyles(() =>
   })
 );
 
+export const modalStyles = makeStyles(() =>
+  createStyles({
+    mainContainer: {},
+    visibility: {
+      visibility: "hidden",
+    },
+    modalWrapper: {
+      width: "100%",
+      height: "100%",
+      top: "0",
+      left: "0",
+      zIndex: 9999,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    modal: {
+      position: "fixed",
+      backgroundColor: "#27293D",
+      width: "calc(30% - 60px)",
+      height: "calc(75% - 60px)",
+      overflow: "auto",
+      zIndex: 9999,
+      opacity: 1,
+      top: "0",
+      left: "0",
+      margin: "7.5% 35%",
+      padding: "30px",
+    },
+    wideWidth: {
+      width: "calc(45% - 60px) !important",
+      height: "calc(80% - 60px) !important",
+      margin: "7.5% 27.25% !important",
+    },
+    modalHead: {
+      height: "8%",
+      color: "#EDEDED",
+    },
+    title: {
+      fontSize: "22px",
+      fontWeight: "bold",
+    },
+    modalBody: {
+      height: "75%",
+      color: "#ffffff",
+      whiteSpace: "pre",
+    },
+    modalFooter: {
+      display: "flex",
+      alignItems: "flex-end",
+      float: "right",
+      height: "15%",
+      "&>button": {
+        marginLeft: "0.4vw",
+      },
+    },
+    inputWrapper: {
+      marginBottom: "16px",
+      "&>div": {
+        width: "100%",
+      },
+    },
+    input: {},
+    button: {
+      width: "4.5vw",
+      height: "3.43vh",
+      padding: "0.56vh 1.15vw",
+      fontSize: "0.9rem",
+    },
+    formControl: {
+      marginTop: "2px",
+      "& svg": {
+        color: "rgb(170, 170, 170)",
+      },
+    },
+    rawData: {},
+    cli: {
+      marginBottom: "24px",
+    },
+    summary: { marginBottom: "24px" },
+    dataWrapper: {},
+    dataTitle: {
+      fontWeight: "bold",
+      fontSize: "18px",
+      marginBottom: "10px",
+    },
+    dataContent: {},
+    cliDetail: {
+      marginBottom: "6px",
+      display: "flex",
+      alignItems: "center",
+      "&>svg": {
+        marginLeft: "8px",
+        marginTop: "4px",
+        width: "18px",
+        height: "18px",
+        cursor: "pointer",
+        color: "gray",
+        "&:hover": {
+          color: "lightgray",
+        },
+      },
+    },
+    summaryDetail: { marginBottom: "6px" },
+    json: {
+      background: "#222436",
+      padding: "30px",
+    },
+  })
+);
+
 export const radarStyles = makeStyles(() =>
   createStyles({
     mainContainer: {},

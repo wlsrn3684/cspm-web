@@ -3,9 +3,8 @@ import { vlunStyles } from "../vulnerability/styles";
 import MaterialTable from "material-table";
 import { Button } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
-import { AWSChecklist } from "../../../constant/checklist";
 import Swal from "sweetalert2";
-import Modal from "../vulnerability/modal";
+import Modal from "./modal";
 
 interface IVulnProps {
   vulnList: IVulnList[];
@@ -123,7 +122,7 @@ export default function Vlun(props: IVulnProps) {
   }, [filterList]);
 
   return (
-    <div>
+    <div className={classes.smallContainer}>
       <div className={classes.content}>
         <div className={classes.tableWrapper}>
           <MaterialTable

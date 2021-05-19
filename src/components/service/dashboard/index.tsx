@@ -774,9 +774,11 @@ export default function Dashboard(): JSX.Element {
 
             let valueIndex = -1;
 
+            console.log(temp);
+
             for (
               let a = 0;
-              a < temp[y.service as IRadarType][riskIndex].length;
+              a < temp[y.service as IRadarType][riskIndex]?.length || 0;
               a++
             ) {
               if (

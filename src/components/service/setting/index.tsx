@@ -67,6 +67,7 @@ export default function Setting() {
                 <TextField
                   required
                   id="filled-required"
+                  type="password"
                   label="현재비밀번호"
                   variant="filled"
                   value={changePassword.currentPassword}
@@ -82,6 +83,7 @@ export default function Setting() {
                 <TextField
                   required
                   id="filled-required"
+                  type="password"
                   label="비밀번호확인"
                   variant="filled"
                   value={changePassword.checkPassword}
@@ -97,6 +99,7 @@ export default function Setting() {
                 <TextField
                   required
                   id="filled-required"
+                  type="password"
                   label="새비밀번호"
                   variant="filled"
                   value={changePassword.newPassword}
@@ -209,6 +212,7 @@ export default function Setting() {
                 <TextField
                   required
                   id="filled-required"
+                  type="password"
                   label="현재비밀번호"
                   variant="filled"
                   value={deleteInfo.currentPassword}
@@ -224,6 +228,7 @@ export default function Setting() {
                 <TextField
                   required
                   id="filled-required"
+                  type="password"
                   label="비밀번호확인"
                   variant="filled"
                   value={deleteInfo.checkPassword}
