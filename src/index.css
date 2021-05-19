@@ -1,0 +1,96 @@
+html,
+body,
+#root,
+.App {
+  min-height: 100% !important;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  margin-bottom: -30px;
+}
+
+.App {
+  display: flex;
+  height: fit-content;
+}
+
+.Content {
+  width: 100%;
+  background-color: #1e1e2f;
+}
+
+.MuiTableSortLabel-root:hover {
+  color: #ffffff !important;
+}
+
+.MuiTableSortLabel-root:focus {
+  color: #ffffff !important;
+}
+
+.MuiTableSortLabel-root.MuiTableSortLabel-active {
+  color: #d6d6d6 !important;
+}
+
+.MuiTableSortLabel-root.MuiTableSortLabel-active.MuiTableSortLabel-root.MuiTableSortLabel-active
+  .MuiTableSortLabel-icon {
+  color: #d6d6d6 !important;
+}
+
+.MuiInput-underline:hover:not(.Mui-disabled):before {
+  border-bottom: 2px solid rgb(190, 190, 190) !important;
+}
+
+.MuiInput-underline:before {
+  border-bottom: 1px solid rgb(170, 170, 170) !important;
+}
+
+.MuiInput-underline:after {
+  border-bottom: 2px solid rgb(255, 255, 255) !important;
+}
+
+.MuiFilledInput-underline:before {
+  border-bottom: 1px solid rgb(170, 170, 170) !important;
+}
+
+.MuiInputBase-root {
+  color: rgb(210, 210, 210) !important;
+}
+
+.MuiFilledInput-underline:after {
+  border-bottom: 2px solid rgb(255, 255, 255) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: rgb(190, 190, 190) !important;
+}
+
+.MuiFormLabel-root {
+  color: rgb(120, 120, 120) !important;
+}
+
+.MuiSelect-root {
+  color: rgb(210, 210, 210) !important;
+}
+
+.MuiPopover-root {
+  z-index: 10000 !important;
+}
+
+.MuiPopover-paper {
+  width: 100px !important;
+}
+
+.MuiSelect-select.MuiSelect-select {
+  padding-left: 12px;
+}
+
+.MuiCheckbox-root {
+  color: #4d62db !important;
+}
+
+body.swal2-height-auto {
+  height: 100% !important;
+}
