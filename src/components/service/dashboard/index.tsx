@@ -9,6 +9,7 @@ import Radar from "./radar";
 import { requestInit } from "../../../constant/requestInit";
 import Vlun from "./vuln";
 import { AWSChecklist } from "../../../constant/checklist";
+import { API_SERVER_URL } from "../../../constant/serverUrl";
 
 export interface IDonut {
   name: string;
@@ -266,9 +267,7 @@ export default function Dashboard(): JSX.Element {
   const getVulnList = async () => {
     let vuln_List: IVulnList[] = [];
 
-    await fetch(
-      `http://116.43.4.229:10831/assessment-results?historyId=${historyId}`
-    )
+    await fetch(`${API_SERVER_URL}/assessment-results?historyId=${historyId}`)
       .then((res3) => res3.json())
       .then(async (res3) => {
         if (Array.isArray(res3)) {

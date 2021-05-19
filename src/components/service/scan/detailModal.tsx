@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import { requestInit } from "../../../constant/requestInit";
 import Swal from "sweetalert2";
+import { API_SERVER_URL } from "../../../constant/serverUrl";
 
 interface IModalInfo {
   result: string;
@@ -94,7 +95,7 @@ export default function Modal(props: IModalProps) {
             }
 
             await fetch(
-              `http://116.43.4.229:10831/assessment-results/${props.info.id}`,
+              `${API_SERVER_URL}/assessment-results/${props.info.id}`,
               requestInit("PUT", {
                 result: result,
                 interview: true,

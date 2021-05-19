@@ -4,6 +4,7 @@ import qs from "qs";
 import MaterialTable from "material-table";
 import { Button } from "@material-ui/core";
 import { requestInit } from "../../../constant/requestInit";
+import { API_SERVER_URL } from "../../../constant/serverUrl";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
 import { AWSChecklist } from "../../../constant/checklist";
@@ -66,7 +67,7 @@ export default function AssetDetail({ location }: any): JSX.Element {
     setDetail([]);
     localStorage.setItem("state", "isLoading");
     await fetch(
-      `http://116.43.4.229:10831/resources`,
+      `${API_SERVER_URL}/resources`,
       requestInit("POST", accountInfo)
     ).then(async () => {
       localStorage.removeItem("state");
@@ -83,7 +84,7 @@ export default function AssetDetail({ location }: any): JSX.Element {
 
     if (accountInfo) {
       await fetch(
-        `http://116.43.4.229:10831/resources?accessKey=${accountInfo.accessKey}`
+        `${API_SERVER_URL}/resources?accessKey=${accountInfo.accessKey}`
       )
         .then((res) => res.json())
         .then(async (res) => {
@@ -96,7 +97,7 @@ export default function AssetDetail({ location }: any): JSX.Element {
             };
 
             await fetch(
-              `http://116.43.4.229:10831/assessment-results?resourceId=${o.resourceId}`
+              `${API_SERVER_URL}/assessment-results?resourceId=${o.resourceId}`
             )
               .then((res2) => res2.json())
               .then(async (res2) => {

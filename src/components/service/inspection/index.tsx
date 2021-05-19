@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { requestInit } from "../../../constant/requestInit";
 import { AWSChecklist } from "../../../constant/checklist";
 import Swal from "sweetalert2";
+import { API_SERVER_URL } from "../../../constant/serverUrl";
 
 interface IEntire {
   id: string;
@@ -221,7 +222,7 @@ export default function Inspection() {
         low_count = 0;
 
       const assessment_results = await fetch(
-        `http://116.43.4.229:10831/assessment-results?historyId=${historyId}`
+        `${API_SERVER_URL}/assessment-results?historyId=${historyId}`
       )
         .then((res) => res.json())
         .then(async (res) => {
@@ -476,7 +477,7 @@ export default function Inspection() {
 
                           try {
                             const response = await fetch(
-                              `http://116.43.4.229:10831/assessment-results`,
+                              `${API_SERVER_URL}/assessment-results`,
                               requestInit("POST", body)
                             )
                               .then((res) => res.json())

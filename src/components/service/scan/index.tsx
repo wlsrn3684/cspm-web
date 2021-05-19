@@ -7,6 +7,7 @@ import { requestInit } from "../../../constant/requestInit";
 import { AWSChecklist } from "../../../constant/checklist";
 import Swal from "sweetalert2";
 import Modal from "./modal";
+import { API_SERVER_URL } from "../../../constant/serverUrl";
 
 interface IScan {
   id: string;
@@ -140,7 +141,7 @@ export default function Scan() {
         low_count = 0;
 
       const assessment_results = await fetch(
-        `http://116.43.4.229:10831/assessment-results?historyId=${historyId}`
+        `${API_SERVER_URL}/assessment-results?historyId=${historyId}`
       )
         .then((res) => res.json())
         .then(async (res) => {
@@ -343,7 +344,7 @@ export default function Scan() {
                               .then(async (res) => {
                                 if (res.result) {
                                   await fetch(
-                                    `http://116.43.4.229:10831/assessment-results?historyId=${res.history.id}`
+                                    `${API_SERVER_URL}/assessment-results?historyId=${res.history.id}`
                                   )
                                     .then((res2) => res2.json())
                                     .then(async (res2) => {
@@ -539,7 +540,7 @@ export default function Scan() {
 
                               try {
                                 const response = await fetch(
-                                  `http://116.43.4.229:10831/assessment-results`,
+                                  `${API_SERVER_URL}/assessment-results`,
                                   requestInit("POST", body)
                                 )
                                   .then((res) => {

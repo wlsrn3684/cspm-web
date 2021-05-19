@@ -7,6 +7,7 @@ import { AWSChecklist } from "../../../constant/checklist";
 import Modal from "./detailModal";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
+import { API_SERVER_URL } from "../../../constant/serverUrl";
 
 interface IVuln {
   id: string;
@@ -65,7 +66,7 @@ export default function ScanDetail({ location }: any): JSX.Element {
       .then(async (res) => {
         if (res.result) {
           await fetch(
-            `http://116.43.4.229:10831/assessment-results?historyId=${res.history.id}`
+            `${API_SERVER_URL}/assessment-results?historyId=${res.history.id}`
           )
             .then((res2) => res2.json())
             .then(async (res2) => {
