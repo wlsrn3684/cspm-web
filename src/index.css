@@ -8,13 +8,18 @@ body,
   margin: 0;
 }
 
+html,
+body,
+#root {
+}
+
 #root {
   margin-bottom: -30px;
 }
 
 .App {
   display: flex;
-  height: fit-content;
+  height: fit-content !important;
 }
 
 .Content {

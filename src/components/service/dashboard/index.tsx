@@ -760,6 +760,7 @@ export default function Dashboard(): JSX.Element {
               }
             }
             let riskIndex = -1;
+
             if (y.status === "Y") {
               riskIndex = 0;
             } else if (y.status === "N") {
@@ -772,29 +773,29 @@ export default function Dashboard(): JSX.Element {
               }
             }
 
-            let valueIndex = -1;
+            if (riskIndex !== -1) {
+              let valueIndex = -1;
 
-            console.log(temp);
+              for (
+                let a = 0;
+                a < temp[y.service as IRadarType][riskIndex]?.length || 0;
+                a++
+              ) {
+                if (
+                  temp[y.service as IRadarType][riskIndex][a].area ===
+                  check.classification
+                )
+                  valueIndex = a;
+              }
 
-            for (
-              let a = 0;
-              a < temp[y.service as IRadarType][riskIndex]?.length || 0;
-              a++
-            ) {
-              if (
-                temp[y.service as IRadarType][riskIndex][a].area ===
-                check.classification
-              )
-                valueIndex = a;
-            }
-
-            if (valueIndex !== -1) {
-              temp[y.service as IRadarType][riskIndex][valueIndex].value++;
-            } else {
-              temp[y.service as IRadarType][riskIndex].push({
-                area: check.classification,
-                value: 1,
-              });
+              if (valueIndex !== -1) {
+                temp[y.service as IRadarType][riskIndex][valueIndex].value++;
+              } else {
+                temp[y.service as IRadarType][riskIndex].push({
+                  area: check.classification,
+                  value: 1,
+                });
+              }
             }
 
             break;
