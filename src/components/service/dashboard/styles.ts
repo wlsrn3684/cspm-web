@@ -62,6 +62,11 @@ export const dashboardStyles = makeStyles(() =>
       marginTop: "30px",
       width: "1080px",
     },
+    title: {
+      color: "lightgray",
+      fontWeight: "bold",
+      fontSize: "22px",
+    },
   })
 );
 

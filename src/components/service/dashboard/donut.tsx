@@ -305,7 +305,7 @@ export default function Donut(props: IDonutProps): JSX.Element {
   return (
     <div className={classes.mainContainer}>
       <div className={classes.header}>
-        <div className={classes.title}>보안성점수</div>
+        <div className={classes.title}>진단별 취약점 현황</div>
       </div>
       <div className={classes.contentWrapper}>
         <svg ref={donutContainer} width={width} height={height} />

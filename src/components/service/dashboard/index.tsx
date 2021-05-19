@@ -848,7 +848,14 @@ export default function Dashboard(): JSX.Element {
 
         <div className={classes.row}>
           <div className={`${classes.cardWrapper} ${classes.width100}`}>
-            <div className={`${classes.card} ${classes.scoreText}`}>65점</div>
+            <div className={`${classes.card} ${classes.scoreText}`}>
+              {`${
+                (Number(vuln?.high_total) - Number(vuln?.high_count) * 2) * 3 +
+                (Number(vuln?.middle_total) - Number(vuln?.middle_count) * 2) *
+                  2 +
+                (Number(vuln?.low_total) - Number(vuln?.low_count) * 2) * 1
+              }점`}
+            </div>
           </div>
         </div>
 
@@ -864,8 +871,8 @@ export default function Dashboard(): JSX.Element {
           </div>
           <div className={`${classes.cardWrapper} ${classes.width70}`}>
             <div className={classes.card}>
-              <div className={classes.header}>
-                <div className={classes.headerText}>서비스 별 취약점 현황</div>
+              <div>
+                <div className={classes.title}>서비스별 취약점 현황</div>
               </div>
               <div className={classes.flex}>
                 <Radar

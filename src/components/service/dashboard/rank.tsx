@@ -111,7 +111,7 @@ export default function Rank(props: IRankProps): JSX.Element {
   return (
     <div className={classes.mainContainer}>
       <div className={classes.header}>
-        <div className={classes.title}>서비스 별 랭킹</div>
+        <div className={classes.title}>서비스별 랭킹</div>
       </div>
       <div className={classes.contentWrapper}>
         <svg ref={rankGraphContainer} width={width} height={height}></svg>
