@@ -555,8 +555,6 @@ export default function Scan() {
                                         })
                                       );
 
-                                      // 삭제해야됨 해당 리스트
-
                                       let changeList = cloudList;
 
                                       await changeList?.map((o, idx) => {

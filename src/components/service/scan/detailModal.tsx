@@ -75,8 +75,6 @@ export default function Modal(props: IModalProps) {
           variant="contained"
           color="primary"
           onClick={async () => {
-            /*
-            
             if (comment == "") {
               Swal.fire({
                 icon: "error",
@@ -104,27 +102,9 @@ export default function Modal(props: IModalProps) {
               })
             );
 
-              props.setInfo({
-              id: props.info.id,
-              result: result,
-              comment: comment,
-              isFetch: true,
-            });
-
-            */
-
-            await fetch(
-              `http://116.43.4.229:10831/assessment-results/${props.info.id}`,
-              requestInit("PUT", {
-                result: "Y",
-                interview: true,
-                interviewContent: "comment",
-              })
-            );
-
             props.setInfo({
               id: props.info.id,
-              result: "Y",
+              result: result,
               comment: comment,
               isFetch: true,
             });
