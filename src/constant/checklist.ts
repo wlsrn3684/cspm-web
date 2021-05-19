@@ -2,7 +2,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "CloudFront_001",
-    risk: "상",
+    risk: "중",
     name: "CloudFront 배포에 지리적 제한이 설정되어 있는지 확인하시오.",
     description:
       "특정 국가의 사용자가 콘텐츠에 액세스하지 못하도록해야하는 경우 CloudFront 지리적 제한 기능을 사용하여 해당 국가를 허용 목록에 추가하거나 차단해야합니다.",
@@ -32,7 +32,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "CloudFront_003",
-    risk: "상",
+    risk: "하",
     name: "CloudFront 배포의 S3 오리진에 버킷 액세스 제한이 설정되어 있는지 확인하시오.",
     description:
       "[Origin이 S3일 경우]\n사용자가 CloudFront를 통해 액세스 할 수 있지만 Amazon S3 URL을 사용하여 직접 액세스 할 수 없도록 Amazon S3 버킷의 콘텐츠를 선택적으로 보호 할 수 있습니다. 이렇게하면 CloudFront를 우회하고 Amazon S3 URL을 사용하여 액세스를 제한하려는 콘텐츠를 가져올 수 없습니다. 이 기능은 서명 된 URL을 사용하는 데 필요하지 않지만 권장됩니다.",
@@ -47,7 +47,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudFront_004",
-    risk: "상",
+    risk: "중",
     name: 'CloudFront 배포의 S3가 아닌 오리진에 최소 오리진 프로토콜이 "TLSv1.1" 또는 "TLSv1.2" 이상으로 설정되어 있는지 확인하시오.',
     description:
       "[Origin이 ELB일 경우]\n사용자가 TLSv1.1 이상을 지원하지 않는 브라우저 또는 디바이스를 사용하지 않는 한 CloudFront 배포 보안 정책의 최소 프로토콜 버전으로 TLSv1.1을 사용할 것을 권장합니다. Cloudfront 배포가 CloudFront 엣지 로케이션과 사용자 지정 오리진 간의 HTTPS 통신에 안전하지 않은 SSL 프로토콜을 사용하지 않도록 설정해야 합니다. SSLv3 프로토콜은 덜 안전하므로 오리진이 TLSv1 이상을 지원하지 않는 경우에만 SSLv3를 선택하는 것이 좋습니다.",
@@ -62,7 +62,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudFront_005",
-    risk: "상",
+    risk: "중",
     name: 'CloudFront 배포의 S3가 아닌 오리진에 오리진 프로토콜 정책이 "HTTPS 만" 또는 "매치 뷰어"로 설정되어 있는지 확인하시오.',
     description:
       "[Origin이 ELB일 경우]\nHTTPS를 사용하여 오리진에서 파일을 가져 오도록 CloudFront를 구성하여 CloudFront가 오리진과 통신 할 때 연결이 암호화되도록 할 수 있습니다. 그러므로 웹 콘텐츠 전송을 보호하고 전송 중 데이터 암호화에 대한 규정 준수 요구 사항을 충족하기 위해 오리진 프로토콜 정책을 HTTPS를 사용하도록 구성해야  합니다.",
@@ -77,7 +77,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudFront_006",
-    risk: "상",
+    risk: "중",
     name: 'CloudFront 배포의 Behaviors의 뷰어 프로토콜 정책이 "HTTP를 HTTPS로 리다이렉션" 또는 "HTTPS 만"으로 설정되어 있는지 확인하시오.',
     description:
       "전송 중에 데이터를 암호화하기 위해 CloudFront가 뷰어와 통신 할 때 뷰어가 HTTPS를 사용해야 합니다. 그러므로 뷰어가 HTTP 요청을 HTTPS 요청으로 redirection하거나 HTTPS 프로토콜만을 사용하도록 웹 배포 프로토콜 정책을 구성해야합니다.",
@@ -92,7 +92,7 @@ export const AWSChecklist = [
   {
     classification: "로그 관리",
     index: "CloudFront_007",
-    risk: "상",
+    risk: "중",
     name: "CloudFront 배포에 실시간 로그 활성화되어 있는지 확인하시오.",
     description:
       "문제 상황이 발생했을 때 보안 및 액세스 감사에 사용하기 위해 CloudFront 배포에 로깅 기능이 활성화해야 합니다. 서버 액세스 로그는 배포 요청에 대한 자세한 기록을 제공합니다. 서버 액세스 로그는 많은 응용 프로그램에 유용합니다. 예를 들어 액세스 로그 정보는 보안 및 액세스 감사에 유용 할 수 있습니다.",
@@ -107,7 +107,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "CloudFront_008",
-    risk: "상",
+    risk: "중",
     name: "CloudFront 웹 배포의 각 Behavior에 필드 수준 암호화를 실행하는지 확인하시오.",
     description:
       "필드 수준 암호화를 사용하면 사용자가 중요한 정보를 웹 서버에 안전하게 업로드 할 수 있습니다. 사용자가 제공하는 민감한 정보는 사용자와 가까운 에지에서 암호화되며 전체 애플리케이션 스택에서 암호화 된 상태로 유지됩니다. 이 암호화는 데이터가 필요하고이를 해독 할 수있는 자격 증명이있는 응용 프로그램 만 그렇게 할 수 있도록합니다. 필드 수준 암호화를 사용하는 HTTPS 요청이 오리진으로 전달되고 요청이 오리진 애플리케이션 또는 하위 시스템을 통해 라우팅 될 때 민감한 데이터는 여전히 암호화되어 데이터 침해 또는 민감한 데이터의 우발적인 데이터 손실 위험을 줄입니다. 신용 번호에 대한 액세스가 필요한 결제 처리 시스템과 같이 비즈니스 이유로 중요한 데이터에 액세스해야하는 구성 요소는 적절한 개인 키를 사용하여 데이터를 해독하고 액세스 할 수 있습니다.",
@@ -137,7 +137,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EBS_002",
-    risk: "상",
+    risk: "하",
     name: "연결되지 않은 EBS 볼륨이 존재하는지 확인하시오.",
     description:
       "AWS 계정에서 사용할 수있는 연결되지 않은 (사용되지 않은) Elastic Block Store (EBS) 볼륨을 식별하고이를 제거하여 월별 AWS 청구 비용을 낮추고 기밀 / 민감한 데이터가 사내에서 유출 될 위험을 줄입니다.",
@@ -151,7 +151,7 @@ export const AWSChecklist = [
   {
     classification: "백업 관리",
     index: "EBS_003",
-    risk: "상",
+    risk: "중",
     name: "EBS 볼륨이 최대 7일마다 스냅샷을 생성하도록 설정되어 있는지 확인하시오.",
     description:
       "EBS 볼륨 (사용 가능 또는 사용 중)에 더 빠르고 안정적인 데이터 백업 전략을 위해 특정 시점 복구에 사용할 수있는 최신 스냅 샷 (매주 촬영)이 있는지 확인합니다. 볼륨 스냅 샷 사이의 시간 프레임에 대한 임계 값은 7 일입니다. 즉, 최소한 7 일마다 스냅 샷이 생성되어야합니다.",
@@ -181,7 +181,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "EBS_005",
-    risk: "상",
+    risk: "중",
     name: "EBS 볼륨이 KMS 고객 관리형 키(CMK)로 암호화되었는지 확인하시오.",
     description:
       "리전에서 암호화 된 EBS 볼륨을 처음 생성하면 기본 마스터 키가 자동으로 생성됩니다. 이 키는 AWS KMS를 사용하여 별도로 생성 한 고객 마스터 키 (CMK)를 선택하지 않는 한 Amazon EBS 암호화에 사용됩니다. 자신의 CMK를 생성하면 생성, 회전, 비활성화, 액세스 제어를 정의하고 데이터를 보호하는 데 사용되는 암호화 키를 감사합니다.",
@@ -211,7 +211,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "EBS_007",
-    risk: "상",
+    risk: "하",
     name: 'EBS 볼륨 설정에서 "새 EBS 볼륨을 항상 암호화"가 활성화되어 있는지 확인하시오.',
     description:
       "애플리케이션의 추가 작업 없이 민감하고 즁요한 데이터를 보호할 수 있습니다. 또한 암호화 된 EBS 볼륨은 규제 / 감사 데이터 및 애플리케이션에 대한 다양한 미사용 데이터 암호화 요구 사항을 충족 할 수 있습니다.",
@@ -241,7 +241,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudTrail_002",
-    risk: "상",
+    risk: "하",
     name: "CloudTrail의 Trail이 모든 영역에서 이벤트를 로깅하도록 설정했는지 확인하시오.",
     description:
       '하나의 AWS 계정에서 여러 개의 리전을 통해 서비스를 운용할 수 있습니다. AWS 계정의 모든 사용자, 역할, 서비스가 수행하는 이벤트 기록을 획득하려면 각 리전에서 발생하는 이벤트 기록을 모두 획득해야 합니다.\n\n따라서, AWS 계정의 모든 리전에서 이벤트 기록을 획득하도록 각 Trail을 구성해야 합니다.\n\nTrail을 모든 리전에서 이벤트 기록을 획득하도록 구성하면, AWS 계정의 모든 리전에서 수행한 이벤트 기록들을 하나의 AWS S3 Bucket이나 CloudWatch Logs 로그 그룹에서 수신할 수 있습니다. 또한 선택적으로 SNS Topic을 지정한 경우 CloudTrail에서는 여러 리전에서 발생한 이벤트 기록을 하나의 SNS Topic에 전달하고, 이를 통해 SNS 알림을 전송할 수 있습니다.\n\n그리고 새로운 리전을 추가하게 되면, 기존의 Trail 구성을 복사해 추가적인 작업 없이 새로운 리전에 대한 이벤트 기록이 포함된 로그 파일을 수신하게 됩니다.\n\nCloudTrail에서 Trail을 생성하거나 업데이트하면서 새로운 Amazon S3 Bucket을 생성할 경우 CloudTrail은 필요한 권한을 해당 Amazon S3 Bucket에 연결합니다. 이 때 Bucket 정책에서 사용하는 서비스 보안 주체 이름을 "cloudtrail.amazonaws.com"으로 사용해야 합니다.\n\n이는 AWS 계정의 모든 리전 뿐만 아니라 새로운 리전에서의 로그 파일을 이 Amazon S3 Bucket으로 전송할 수 있는 CloudTrail 권한을 부여합니다.',
@@ -270,7 +270,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudTrail_004",
-    risk: "상",
+    risk: "하",
     name: "CloudTrail 로그 파일이 S3 Bucket으로 전송될 때 Amazon SNS Topic을 통한 알림을 설정했는지 확인하시오.",
     description:
       "CloudTrail이 Amazon S3 Bucket에 새로운 로그 파일을 게시할 때 이에 대한 알림 Amazon Simple Notification Service(SNS)를 통해 받을 수 있습니다. ",
@@ -285,7 +285,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudTrail_005",
-    risk: "상",
+    risk: "중",
     name: "CloudTrail의 각 Trail의 Insights Event가 활성화 되어있는지 확인하시오.",
     description:
       "CloudTrail Insights 이벤트는 AWS 계정의 리전의 CloudTrail 쓰기 관리 이벤트를 분석하여 비정상적인 활동을 감지합니다. 평소와 다르거나 비정상적인 이벤트는 이전에 설정된 운영 패턴 및 기준에서 예상하는 것과 다른 AWS API 호출 볼륨으로 정의됩니다. Insights 이벤트는 비정상적인 활동을 파악하고 이에 대한 조치를 취하는데 도움이 되는 관련된 여러 정보를 제공합니다.\n\nCloudTrail Insights 이벤트를 통해 AWS 계정의 이러한 변화를 알 수 있고, 신속하게 시정 조치를 취할 수 있기 때문에 CloudTrail Insights 이벤트를 활성화 해야합니다.\n\nCloudTrail에서 Trail을 생성할 대 기본적으로 Insights 이벤트는 비활성화됩니다. Insights 이벤트를 기록하려면 새로운 Trail 혹은 기존 Trail에서 Insights 이벤트를 명시적으로 활성화해야합니다.",
@@ -300,7 +300,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudTrail_006",
-    risk: "상",
+    risk: "하",
     name: "CloudTrail의 각 Trail이 S3 Bucket와 SNS에 정상적으로 로그를 전달했는지 확인하시오.",
     description:
       "보안 및 규정 준수 감사를 위해 CloudTrail의 로그 파일 데이터를 유지하기 위해서는 Trail에서 생성된 로그 파일이 지정된 수신자에게 오류 없이 전달되는지 확인해야 합니다.\n\nCloudTrail의 Trail이 전송 오류 또는 잘못된 구성(일반적으로 사용자가 설정한 정책) 으로 인해 수신자에게 로그 파일을 전송할 수 없는 경우 이러한 Trail에 의해 기록된 로그 파일들은 향후 보안 및 규정 준수 감사를 위해 사용될 수 없습니다.\n\n로그 파일은 일반적으로 5분마다 게시됩니다.",
@@ -345,7 +345,7 @@ export const AWSChecklist = [
   {
     classification: "로그 관리",
     index: "CloudTrail_009",
-    risk: "상",
+    risk: "중",
     name: "CloudTrail의 각 Trail이 로그파일 무결성 검증을 하도록 설정했는지 확인하시오.",
     description:
       "Trail의 로그 파일 무결성 검증 기능을 활성화화면, CloudTrail에서 시간 단위로 다이제스트 파일을 전송합니다. 다이제스트 파일에는 Amazon S3 Bucket에 전송된 로그 파일, 해당 로그 파일에 대한 해시 값, 이전 다이제스트 파일의 디지털 서명, 그리고 Amazon S3 메타데이터 섹션에 있는 현재 다이제스트 파일의 디지털 서명에 관한 정보가 포함됩니다. 이 파일을 통해서 CloudTrail의 로그 파일이 전송 이후 변경, 삭제되었는지 여부를 확인할 수 있습니다.\n\n무결성이 검증된 로그 파일은 보안 및 과학 수사과 같은 IT 보안 및 감사 프로세스를 지원하는데 있어서 특히 중요합니다.\n\n예를 들어, 검증된 로그 파일을 사용하면 Amazon S3 Bucket에 저장되어 있는 로그 파일이 변경되지 않았음을 보장하고, 이는 특정 사용자의 자격증명이 특정 API 활동을 수행했음을 확실하게 주장함으로써 부인방지의 역할을 수행합니다. 또한, CloudTrail 로그 파일 무결성 검증 과정을 통해 로그 파일이 삭제, 변경되었는지 여부를 파악하고, 지정된 기간동안 Amazon S3 Bucket 혹은 CloudWatch Logs 로그 그룹에 로그 파일이 전송되지 않았음을 확실하게 주장할 수 있습니다.\n\n따라서, CloudTrail의 각 Trail에 로그 파일 무결성 검증을 설정해야 합니다.",
@@ -360,7 +360,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "CloudTrail_010",
-    risk: "상",
+    risk: "중",
     name: "CloudTrail 로그가 KMS CMKs를 통해 암호화되도록 설정했는지 확인하시오.",
     description:
       "CloudTrail의 Trail이 Amazon S3 Bucket에 제공하는 로그 파일은 기본적으로 Amazon S3 관리형 암호화 키(SSE-S3)를 사용하는 서버측 암호화를 통해 암호화됩니다. 직접 관리할 수 있는 보안 계층을 추가하기 위해 CloudTrail의 Trail의 로그 파일에 대한 AWS KMS 관리형 키(SSE-KMS)로 서버측 암호화를 대신할 수 있습니다.\n\n로그 파일을 조금 더 안전하게 보호하기 위해서 CloudTrail로 SSE-KMS를 사용하려면 고객 마스터 키(CMK)로 알려진 KMS를 생성하고 관리해야 합니다.\n\n이와 같은 방법으로 암호화를 수행할 경우 아래의 장점이 있습니다.\n1. CMK 암호화 키를 직접 생성하고 관리할 수 있습니다.\n2. AWS 계정의 모든 리전에서 로그 파일을 암호화하고 복호화할 단일 CMK를 사용할 수 있습니다.\n3. Trail의 로그 파일을 암호화하고 복호화하는 키를 사용할 사람을 제어할 수 있습니다.\n4. 더 강화된 보안을 적용할 수 있습니다.\n5. Amazon S3가 CMK를 사용할 권한이 부여된 사용자로부터 요청에 따라서 로그 파일을 자동으로 복호화 하기 때문에 Trail의 로그 파일에 대한 SSE-KMS 암호화는 로그 데이터를 읽는 어플리케이션과도 호환됩니다.",
@@ -450,7 +450,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "VPC_006",
-    risk: "상",
+    risk: "중",
     name: "보안그룹에 RFC-1918에 지정된 사설 네트워크망 IP 주소 범위(10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)에서 액세스하는 것을 허용하는 인바운드 규칙이 존재하는지 확인하시오.",
     description:
       "RFC-1918에서 지정한 IP 주소 범위란 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 처럼 내부 호스트에 할당된 Private IP 주소를 말합니다. 이러한 IP 주소는 인터넷에서 사용할 수없거나 연결할 수 없는 사설 네트워크에서 사용해야 합니다.\n\n보안그룹의 인바운드 규칙에서 RFC-1918에서 지정한 IP 주소 범위를 사용해 사설 네트워크 전체가 액세스할 수 있도록 허용하는 것은 지나치게 허용적인 구성입니다.\n\nAWS 보안 모범 사례중에서 최소 권한의 원칙을 따르기 위해서 필요한 사설 네트워크 IP 주소에 대해서만 인바운드 트래픽을 허용하는 것이 좋습니다.",
@@ -465,7 +465,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "VPC_007",
-    risk: "상",
+    risk: "중",
     name: "기본 Network ACL에 트래픽을 허용하는 규칙이 존재하는지 확인하시오.",
     description:
       "VPC는 수정 가능한 기본 NACL(Network ACL)을 제공한다. NACL은 인바운드 및 아웃바운드 허용, 거부 규칙으로 이루어져 있습니다.\n\n기본 NACL은 기본적으로 모든 인바운드 및 아웃바운드 IPv4 트래픽을 허용하는 규칙을 포함하고 있고, 해당되는 경우 IPv6 트래픽도 허용하는 규칙을 포함합니다. Subnet을 생성할 때 사용자 지정 NACL을 선택하지 않을 경우, 기본 NACL이 자동으로 연결됩니다.\n\n모든 인바운드, 아웃바운드 트래픽을 허용하는 규칙을 가지는 NACL을 Subnet에 연결하는 것은 위험하기 때문에 기본 NACL을 사용하지 않는 것이 좋습니다.",
@@ -510,7 +510,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "VPC_010",
-    risk: "상",
+    risk: "중",
     name: "AWS Organization 구성원 이외의 계정과 연결된 VPC 피어링 연결이 존재하는지 확인하시오.",
     description:
       "AWS Organization의 멤버 계정 간의 트래픽만 허용하도록 VPC 피어링 통신을 올바르게 구성하면 조직 리소스를 외부에 공개하지 않도록 격리할 수 있습니다.\n\n외부에 공개되어 있는 VPC 피어링이 존재하는지 확인하기 위해서 AWS Organization의 AWS 계정외의 계정과 연결된 VPC 피어링이 존재하는지 확인해야 합니다.",
@@ -525,7 +525,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "VPC_011",
-    risk: "상",
+    risk: "중",
     name: "기본 VPC가 사용되고 있는지 확인하시오.",
     description:
       "기본 VPC를 생성하게 되면 인터넷 게이트웨이가 연결되고 사용자의 인스턴스는 EC2-Classic과 마찬가지로 Public IP 주소를 자동으로 할당받습니다. 이처럼 보안 모범사례를 지키지 않거나 의도하지 않은 일부 기본 구성이 제공될 수 있기 때문에 기본 VPC를 사용하지 않는 것이 좋습니다.",
@@ -540,7 +540,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "VPC_012",
-    risk: "상",
+    risk: "하",
     name: "AWS VPN에 두 터널이 활성화되어 있는지 확인하시오.",
     description:
       "AWS VPN에는 유지 관리시에 장애 조치 전략으로 두 터널을 항상 활성화되도록 구성해야 합니다.\n\n이를 통해 두 개의 활성화된 터널 중 하나의 터널을 사용할 수 없게 될 때에도 중지 없이 트래픽 흐름을 유지하는 가용성을 확보할 수 있습니다.",
@@ -555,7 +555,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "VPC_013",
-    risk: "상",
+    risk: "하",
     name: "NAT Gateway가 2개 이상의 가용영역(AZ)에서 구현되어 있는지 확인하시오.",
     description:
       "Private 서브넷에 포함된 인스턴스들에 인터넷에서 액세스하지 못하도록 하면서 펌웨어 업그레이드 등과 같은 목적으로 인터넷에 연결해야할 경우가 있을 수 있습니다. 이러한 상황에서 NAT Gateway를 사용할 수 있습니다. NAT Gateway를 생성하려면 NAT Gateway가 상주할 Public 서브넷을 지정해야하고, NAT Gateway를 생성할 때 연결할 Elastic IP(Public IP)를 지정해줘야 합니다.\n\n만약 여러 가용영역에 리소스가 존재하지만 모든 리소스가 하나의 NAT Gateway에 연결되어 있다면 해당 Public 서브넷에 장애가 발생할 경우 해당 NAT Gateway에 연결된 모든 리소스는 인터넷에 연결할 수 없습니다.\n\n따라서, Public 서브넷이 이미 2개 이상의 가용영역(AZ)에 구성되어 있다면, NAT Gateway도 Public 서브넷이 위치한 서로다른 2개 이상의 가용영역에 이중화하여 구성하는 것이 좋습니다. 이렇게 서로 다른 가용영역에 NAT Gateway를 구성할 경우 Fault Tolerance(장애 허용)와 High Availability(고가용성)의 효과를 가질 수 있습니다.",
@@ -570,7 +570,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "VPC_014",
-    risk: "상",
+    risk: "중",
     name: "각 Tier를 위한 서브넷을 2개 이상의 가용영역(AZ)에 생성했는지 확인하시오.",
     description:
       "대부분의 AWS 리전은 2개 이상의 가용영역(AZ)가 존재한다. 예를들면, ap-northeast-2 리전에는 ap-northeast-1a, ap-northeast-1b, ap-northeast-1c, ap-northeast-1d의 네개의 가용영역이 존재한다.\n\n2개 이상의 가용영역이 존재하는 리전에 리소스를 만들때 서로 다른 2개 이상의 가용영역에 서브넷을 생성해야 합니다. 이렇게 서로 다른 가용영역에 서브넷을 생성할 경우 리소스 배포 관점에서 Fault Tolerance(장애 허용)와 High Availability(고가용성)의 효과를 가질 수 있습니다.",
@@ -583,7 +583,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "VPC_015",
-    risk: "상",
+    risk: "하",
     name: "Public 서브넷(Web-tier ELB)에 연결된 라우팅 테이블에 0.0.0.0/0에서 Internet Gateway로 라우팅하는 규칙이 존재하는지 확인하시오.",
     description:
       "Web-tier ELB는 외부에서 액세스할 수 있는 Public 서브넷에 포함되고, 외부의 요청을 받아 Web-tier로 전달하는 역할을 합니다. 이때 Web-tier ELB가 포함된 Public 서브넷에 연결된 라우팅 테이블에는 NAT Gateway로 전달된 트래픽을 외부로 보내는 등 Public 서브넷에 포함된 인스턴스들의 트래픽을 외부로 전송하기 위해 0.0.0.0/0에서 Internet Gateway(IGW)로 라우팅하는 규칙이 존재해야 합니다.\n\n만약 이러한 라우팅 규칙이 존재하지 않는다면, 해당 VPC의 Private 서브넷에서 NAT Gateway로 전송하는 트래픽이 외부로 전송되지 못하며, 해당 Public 서브넷에서도 외부와 통신을 할 수 없게됩니다. 이는 해당 서비스를 사용하는 사용자의 가용성에 문제를 일으킬 수 있습니다.",
@@ -598,7 +598,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "VPC_016",
-    risk: "상",
+    risk: "하",
     name: "Private 서브넷(Web-tier, App-tier, Data-tier)에 연결된 라우팅 테이블에 0.0.0.0/0 NAT Gateway로 라우팅하는 규칙이 존재하는지 확인하시오.",
     description:
       "외부에서 접근은 안되야 하는게 당연. 하지만 내부(각 티어)에서 외부에서 다운로드(업데이트와 같은 사유)와 같은 이유로 통신이 가능해야 할 경우 NAT Gateway를 사용할 수 있다. \n\n따라서 Private 서브넷에 연결된 라우팅 테이블에는 0.0.0.0/0에서 NAT Gateway로 라우팅하는 규칙이 존재해야 한다.\n\n조금 더 고민해보면 외부로 접근할 필요가 없는 Private 서브넷에서는 굳이 없어도 된다는말 아닌가..?\n\n노랑 항목과 합치면 될듯. 분리되어있어야 할 이유가 별로없는거 같은데\n\nPrivate 서브넷에 포함된 인스턴스들은 Default(0.0.0.0/0) 트래픽에 대해서 NAT 게이트웨이로 트래픽을 보내는 기본 경로만을 가지는 라우팅 테이블에 연결되어 있어야 합니다.\n\n이렇게 구성하게 되면 Private 서브넷에 포함된 인스턴스는 NAT 게이트웨이를 통해 Elastic IP(Public IP)를 할당받고 외부로 나갈 수 있습니다. 하지만, 외부에서는 Private 서브넷에 포함된 인스턴스에 접근할 수 없습니다.\n\nPrivate 서브넷에 연결된 라우팅 테이블에 기본 경로를 제외한 다른 경로가 존재한다면...?\n\n삭제 건의",
@@ -687,7 +687,7 @@ export const AWSChecklist = [
   {
     classification: "로그 관리",
     index: "VPC_022",
-    risk: "상",
+    risk: "중",
     name: "각 VPC의 네트워크 인터페이스를 오가는 트래픽을 CloudWatch Logs/Amazon S3에 캡처해 관리하는 흐름로그가 존재하는지 확인하시오.",
     description:
       "VPC 흐름 로그는 VPC에 존재하는 네트워크 인터페이스에서 송/수신되는 트래픽에 대한 정보를 수집할 수 있는 기능입니다. 흐름 로그에서 수집한 데이터는 Amazon CloudWatch Logs 또는 Amazon S3 Bucket로 전송되어서 저장됩니다.\n\n흐름 로그를 활성화할 경우\n1. 지나치게 제한적인 보안그룹 규칙 진단\n2. 인스턴스에 도달하는 네트워크 트래픽 모니터링\n3. 네트워크 인터페이스를 오가는 트래픽의 방향 결정\n와 같은 작업에 도움이 될 수 있습니다.\n\nVPC 흐름 로그를 활성화하면 과도하게 허용되는 보안그룹 및 NACL와 같은 보안 및 액세스 문제를 감지하고, 거부된 연결 요청 혹은 비정상적인 수준의 데이터 전송과 같은 트리거된 활동을 알릴 수 있습니다.",
@@ -702,7 +702,7 @@ export const AWSChecklist = [
   {
     classification: "로그 관리",
     index: "VPC_023",
-    risk: "상",
+    risk: "중",
     name: "각 Subnet의 네트워크 인터페이스를 오가는 트래픽을 CloudWatch Logs/Amazon S3에 캡처해 관리하는 흐름로그가 존재하는지 확인하시오.",
     description:
       "VPC 흐름 로그는 VPC에 존재하는 네트워크 인터페이스에서 송/수신되는 트래픽에 대한 정보를 수집할 수 있는 기능입니다.. 흐름 로그에서 수집한 데이터는 Amazon CloudWatch Logs 또는 Amazon S3 Bucket로 전송되어서 저장됩니다..\n\n흐름 로그를 활성화할 경우\n1. 지나치게 제한적인 보안그룹 규칙 진단\n2. 인스턴스에 도달하는 네트워크 트래픽 모니터링\n3. 네트워크 인터페이스를 오가는 트래픽의 방향 결정\n와 같은 작업에 도움이 될 수 있습니다.\n\nVPC 흐름 로그를 활성화하면 과도하게 허용되는 보안그룹 및 NACL와 같은 보안 및 액세스 문제를 감지하고, 거부된 연결 요청 혹은 비정상적인 수준의 데이터 전송과 같은 트리거된 활동을 알릴 수 있습니다.",
@@ -807,7 +807,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_007",
-    risk: "상",
+    risk: "중",
     name: "AdministratorAccess 관리형 정책을 가진 관리자용 IAM 사용자가 존재하는지 확인하시오.",
     description:
       "액세스 키를 사용하여 프로그래밍 방식으로 AWS에 요청을 보낼 수 있습니다. AWS 계정 Root 사용자의 액세스 키는 결제 정보를 포함하여 모든 AWS 서비스의 전체 리소스에 대해 액세스 권한을 가집니다. AWS 계정 Root 사용자에 부여된 권한은 줄일 수 없습니다.\n\n따라서 관리자에 대해서도 IAM 사용자를 만들어 관리 권한(AdministratorAccess)을 부여한 후 모든 관리 작업에 대해서 해당 IAM 사용자 계정을 사용하도록 해야합니다.\n\n이후 모든 상호작용은 AWS 계정 Root 사용자 대신 IAM 사용자를 통해 이루어져야 합니다.",
@@ -822,7 +822,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_008",
-    risk: "상",
+    risk: "하",
     name: "AWS 계정 설정에 대체 연락처 세부 정보가 설정되어있는지 확인하시오.",
     description:
       "대체 연락처 세부 정보가 설정되면 보안 관리자가 부재중이더라도 Amazon이 해당 AWS 계정에서 발견된 보안 문제에 대해서 대체 연락처를 통해 다른 사람에게 연락할 수 있습니다.",
@@ -837,7 +837,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_009",
-    risk: "상",
+    risk: "하",
     name: "AWS 계정 설정에 보안 챌린지 질문 구성이 설정되어있는지 확인하시오.",
     description:
       "보안 챌린지 질문은 AWS 계정이 손상되거나 고객 서비스에 도움을 요청해야 할 때 Amazon이 신원확인을 위해 이용하는 질문입니다. 계정 소유자는 AWS 지원 포털을 통한 지원 혹은 AWS 고객 서비스 호출하는 개인을 인증하기 위한 수단으로 보안 챌린지 질문을 사용하게 됩니다.\n\n기본적으로 AWS 계정에는 보안 챌린지 질문이 설정되어 있지 않습니다. 보안 챌린지 질문을 활성화하고 구성하면 계정에 보안 계층이 추가됩니다.",
@@ -867,7 +867,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_011",
-    risk: "상",
+    risk: "중",
     name: "강력한 IAM 암호 정책을 설정했는지 확인하시오.",
     description:
       "IAM 사용자가 직접 암호를 변경하도록 허용할 경우 강력한 암호를 만들고 주기적으로 암호를 변경하도록 해야 합니다.\n\n또한, 암호 정책은 암호 복잡성 요구사항을 적용하는데 사용됩니다. IAM 암호 정책을 사용해 암호가 서로 다른 문자 집합으로 구성되어있는지 확인할 수 있습니다.\n\nIAM 사용자의 암호의 강도, 패턴 및 교체를 적용하는 것은 AWS 계정의 보안을 유지하는데 매우 중요합니다. 강력한 암호 정책을 사용하면 암호 추측 및 무차별 대입 공격으로부터의 위험을 크게 줄일 수 있습니다.",
@@ -882,7 +882,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_012",
-    risk: "상",
+    risk: "중",
     name: "IAM 암호 정책이 14자 이상의 암호를 요구하도록 설정했는지 확인하시오.",
     description:
       "IAM 사용자가 직접 암호를 변경하도록 허용할 경우 강력한 암호를 만들고 주기적으로 암호를 변경하도록 해야 합니다.\n\n또한, 암호 정책은 암호 복잡성 요구사항을 적용하는데 사용됩니다. IAM 암호 정책을 사용해 암호가 서로 다른 문자 집합으로 구성되어있는지 확인할 수 있습니다.\n\nIAM 사용자의 암호의 강도, 패턴 및 교체를 적용하는 것은 AWS 계정의 보안을 유지하는데 매우 중요합니다. 강력한 암호 정책을 사용하면 암호 추측 및 무차별 대입 공격으로부터의 위험을 크게 줄일 수 있습니다.",
@@ -897,7 +897,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_013",
-    risk: "상",
+    risk: "중",
     name: "IAM 암호 정책이 암호 재사용을 방지하도록 설정했는지 확인하시오.",
     description:
       "IAM 사용자가 직접 암호를 변경하도록 허용할 경우 강력한 암호를 만들고 주기적으로 암호를 변경하도록 해야 합니다.\n\n또한, 암호 정책은 암호 복잡성 요구사항을 적용하는데 사용됩니다. IAM 암호 정책을 사용해 암호가 서로 다른 문자 집합으로 구성되어있는지 확인할 수 있습니다.\n\nIAM 사용자의 암호의 강도, 패턴 및 교체를 적용하는 것은 AWS 계정의 보안을 유지하는데 매우 중요합니다. 강력한 암호 정책을 사용하면 암호 추측 및 무차별 대입 공격으로부터의 위험을 크게 줄일 수 있습니다.",
@@ -912,7 +912,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_014",
-    risk: "상",
+    risk: "중",
     name: "IAM 암호 정책이 암호를 90일 이내에 만료하도록 설정했는지 확인하시오.",
     description:
       "IAM 사용자가 직접 암호를 변경하도록 허용할 경우 강력한 암호를 만들고 주기적으로 암호를 변경하도록 해야 합니다.\n\n또한, 암호 정책은 암호 복잡성 요구사항을 적용하는데 사용됩니다. IAM 암호 정책을 사용해 암호가 서로 다른 문자 집합으로 구성되어있는지 확인할 수 있습니다.\n\nIAM 사용자의 암호의 강도, 패턴 및 교체를 적용하는 것은 AWS 계정의 보안을 유지하는데 매우 중요합니다. 강력한 암호 정책을 사용하면 암호 추측 및 무차별 대입 공격으로부터의 위험을 크게 줄일 수 있습니다.",
@@ -927,7 +927,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_015",
-    risk: "상",
+    risk: "중",
     name: "모든 IAM 사용자가 IAM 패스워드 정책에 맞게 설정하였는지 확인하시오.",
     description:
       "IAM 사용자가 직접 암호를 변경하도록 허용할 경우 강력한 암호를 만들고 주기적으로 암호를 변경하도록 해야 합니다.\n\n또한, 암호 정책은 암호 복잡성 요구사항을 적용하는데 사용됩니다. IAM 암호 정책을 사용해 암호가 서로 다른 문자 집합으로 구성되어있는지 확인할 수 있습니다.\n\nIAM 사용자의 암호의 강도, 패턴 및 교체를 적용하는 것은 AWS 계정의 보안을 유지하는데 매우 중요합니다. 강력한 암호 정책을 사용하면 암호 추측 및 무차별 대입 공격으로부터의 위험을 크게 줄일 수 있습니다.",
@@ -940,7 +940,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_016",
-    risk: "상",
+    risk: "중",
     name: "암호가 만료되거나 만료일이 7일 이내인 IAM 사용자가 존재하는지 확인하시오.",
     description:
       "이건 Trend꺼고 만료된다고해서 문제될건 없을거 같아서 삭제를 고려하는 중.",
@@ -969,7 +969,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_018",
-    risk: "상",
+    risk: "중",
     name: "IAM 사용자 생성과정에서 액세스 키가 생성되는지 확인하시오.",
     description:
       "AWS Management 콘솔 암호를 가지는 IAM 사용자에 대해서 초기 설정 중에 생성된 IAM 액세스 키를 보유하고 있는 IAM 사용자가 존재하는지 확인해야 합니다.\n\nIAM 사용자에 대해서 초기 설정 중에 액세스 키를 생성하게 되면, 불필요한 액세스 키가 생성될 수 있고 이를 통해 AWS 계정에 무단 액세스가 발생할 수 있습니다.\n\n따라서 해당 IAM 사용자에게 액세스 키가 필요할 경우 별도의 단계를 거쳐 IAM 사용자에게 액세스 키를 부여하는게 좋습니다. 별도의 단계를 거쳐 액세스 키를 부여하게 되면 해당 액세스 키가 필요에 의해서 생성되었다는 것을 보일 수 있습니다.",
@@ -999,7 +999,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_020",
-    risk: "상",
+    risk: "중",
     name: "2개의 액세스 키가 활성화된 IAM 사용자가 존재하는지 확인하시오.",
     description:
       "보안 모범 사례에 의하면 불필요한 IAM 사용자 액세스 키를 식별하고 비활성화 해야 합니다. IAM 사용자에게는 최대 2개의 액세스 키를 활성화 시킬 수 있지만, 이는 액세스 키를 교체하는 과정에서만 사용할 것을 권장합니다.\n\n불필요한 IAM 사용자의 액세스 키를 제거하면 AWS 계정 리소스 및 구성 요소에 대한 무단 액세스 위험이 줄어들고 보안 모범 사례를 준수할 수 있습니다.",
@@ -1014,7 +1014,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_021",
-    risk: "상",
+    risk: "중",
     name: "2개 이상의 SSH Public Key가 활성화된 IAM 사용자가 존재하는지 확인하시오.",
     description:
       "IAM 사용자의 SSH Public Key는 AWS CodeCommit 레포지토리를 인증하는데 사용됩니다. 불필요한 IAM 사용자 SSH Public Key를 식별하고 비활성화 해야 합니다. IAM 사용자에게는 최대 2개의 SSH Public Key를 활성화할 수 있지만, 이는 SSH Public Key를 교체하는 과정에서만 사용할 것을 권장합니다.\n\n불필요한 IAM 사용자의 SSH Public Key를 제거하면 AWS CodeCommit 레포지토리에 대한 무단 액세스 위험이 줄어들고 보안 모범 사례를 준수할 수 있습니다.",
@@ -1029,7 +1029,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_022",
-    risk: "상",
+    risk: "중",
     name: "SSH Public Key가 90일 이내에 재발급 되었는지 확인하시오.",
     description:
       "IAM 사용자의 SSH Public Key는 AWS CodeCommit 레포지토리를 인증하는데 사용됩니다. AWS CodeCommit 레포지토리에 대한 무단 액세스 위험을 줄이기 위해 IAM 사용자의 SSH Public Key는 적어도 90일 이내에 재발급하는 것이 좋습니다.\n\nIAM 사용자의 SSH Public Key를 주기적으로 재발급함으로써 사용자 모르게 공격자가 노출되거나 크랙된 SSH Public Key 세트를 이용해 AWS CodeCommit에서 호스팅하는 개인 레포지토리에 액세스할 수 있는 기회를 줄일 수 있습니다.",
@@ -1044,7 +1044,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_023",
-    risk: "상",
+    risk: "중",
     name: "모든 IAM 사용자에 MFA가 활성화되어 있는지 확인하시오.",
     description:
       "AWS MFA(Multi-Factor Authentication)은 AWS 환경에 적용할 수 있는 보안 수준을 높여줍니다. MFA가 활성화된 상태에서 사용자가 AWS에 로그인할 때 기존 자격증명외의 인증코드를 입력하라는 메시지를 표시합니다.\n\nIAM 사용자를 MFA로 보호하는 것은 공격자로부터 AWS 리소스 및 서비스를 보호하는 효과적인 방법입니다. MFA는 기존 IAM 사용자의 자격증명 위에 추가 보호 계층을 추가하여 MFA 생성 암호 없이는 IAM 사용자에 침투할 수 없도록 합니다.\n\n따라서 보안 강화를 위해 모든 IAM 사용자의 MFA를 활성화하는 것이 좋습니다. ",
@@ -1059,7 +1059,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_024",
-    risk: "상",
+    risk: "하",
     name: "IAM 사용자에게 연결된 IAM 정책이 존재하는지 확인하시오.",
     description:
       "개별 IAM 사용자에 대해 권한을 정의하는 대신, 관련된 그룹을 만드는 것이 더 편리할 수 있습니다. AWS 계정 내에 존재하는 IAM 사용자들에게 효율적으로 권한을 할당할 수 있고, 사용자 기반 액세스를 보다 효율적으로 관리할 수 있습니다.\n\n이를 통해 액세스 관리의 복잡성이 줄어들고, 실수로 과도한 권한을 부여할 가능성이 줄어들게 됩니다.\n\nIAM 그룹을 생성하고 해당 그룹에 필요한 권한을 부여합니다. 이후, IAM 사용자를 해당 그룹에 할당하게 되면 그룹에 할당된 모든 권한은 IAM 사용자에게 상속됩니다. 따라서 한 번에 그룹 내 모든 IAM 사용자들에 변경 사항을 적용할 수 있습니다. ",
@@ -1074,7 +1074,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_025",
-    risk: "상",
+    risk: "하",
     name: "사용하지 않는 IAM 사용자가 존재하는지 확인하시오.",
     description:
       "IAM 사용자가 생성된 후 한번도 로그인되거나 비활성화 되어 있는 IAM 사용자가 존재하는지 확인하고 불필요한 IAM 사용자일 경우 삭제해야 합니다. \n\n불필요한 IAM 사용자를 삭제하면 AWS 계정 리소스에 대한 무단 액세스의 위험을 줄이고 IAM 사용자 기반 액세스를 보다 효율적으로 관리할 수 있습니다.",
@@ -1089,7 +1089,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_026",
-    risk: "상",
+    risk: "중",
     name: "인라인 정책이 있는 IAM 사용자 혹은 그룹이 존재하는지 확인하시오.",
     description:
       "사용자 지정 정책의 경우 인라인 정책보다는 관리형 정책의 사용을 권장합니다. 이 정책을 사용하면 AWS Management 콘솔의 한 위치에서 모든 관리형 정책을 볼 수 있다는 편리성이 있습니다. 또한 AWS CLI 또는 API 작업을 통해서도 이러한 관리형 정책을 볼 수 있습니다.\n\n또한 관리형 정책을 사용하면 재사용성, 버전 관리, 롤백, 자동 업데이트, 더 큰 정책의 할당에 대한 세분화된 제어와 같은 여러 이점을 제공할 수 있습니다.",
@@ -1104,7 +1104,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "IAM_027",
-    risk: "상",
+    risk: "하",
     name: "사용하지 않는 IAM 그룹이 존재하는지 확인하시오.",
     description:
       "AWS 계정 내의 모든 IAM 그룹이 현재 사용되고 있는지 확인해야 합니다. 만약 하나 이상의 IAM 사용자와 연결되어 있지 않다면 사용되고 있지 않다고 판단할 수 있습니다.\n\n사용하지 않는 IAM 그룹이 존재한다면 무단 IAM 사용자가 연결되어 해당 IAM 그룹에 부여되어 있는 권한을 이용해 기존에 권한이 없던 AWS 계정 리소스에 액세스할 수 있는 위험이 존재합니다.",
@@ -1134,7 +1134,7 @@ export const AWSChecklist = [
   {
     classification: "권한 관리",
     index: "IAM_029",
-    risk: "상",
+    risk: "중",
     name: "AWSCloudTrail_FullAccess 정책이 한 개 이상의 IAM Entity에 부여되어 있는지 확인하시오.",
     description:
       "AWSCloudTrail_FullAccess 정책이 부여되어 있는 IAM 사용자 및 역할은 자신의 AWS 계정에서 가장 민감하고 중요한 CloudTrail을 이용한 감사 기능을 비활성화 하거나 재구성 할 수 있습니다.\r\n\r\n이 정책은 AWS 계정의 IAM 사용자 및 역할에 광범위하게 적용하거나 공유하기 위한 것이 아니기 때문에 이 정책의 적용을 최대한 적은 수의 개인으로 제한해야 합니다. AWS 계정의 관리자 역할을 담당할 것으로 예상되는 사람에게만 이 정책을 부여해야 합니다.",
@@ -1177,7 +1177,7 @@ export const AWSChecklist = [
   {
     classification: "권한 관리",
     index: "IAM_032",
-    risk: "상",
+    risk: "하",
     name: "AWSSupportAccess 정책을 가지는 IAM 역할이 존재하는지 확인하시오.",
     description:
       "IAM 정책별로 액세스 제어에 필요한 최소 권한만 부여함으로써 사건을 관리하기 위한 지원 센터 액세스를 허용하는 IAM 정책이 부여된 IAM 역할을 생성해야 합니다.\n\n사건을 관리하기 위한 지원 센터 액세스를 허용에 필요한 AWSSupportAccess 정책을 IAM 역할에 부여함으로써 최소 권한 원칙을 구현하는 것은 매우 중요합니다.",
@@ -1207,7 +1207,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "IAM_034",
-    risk: "상",
+    risk: "중",
     name: "만료되거나 만료일이 7일 이내인 SSL/TLS 인증서가 존재하는지 확인하시오.",
     description: "",
     inspection:
@@ -1221,7 +1221,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "IAM_035",
-    risk: "상",
+    risk: "중",
     name: "2014년 4월 1일 이전에 업로드된 SSL/TLS 인증서가 없는지 확인하시오.",
     description:
       "AWS IAM에서 관리하는 모든 SSL/TLS 서버 인증서가 Heartbleed 버그에 의해서 손상되지 않았는지 확인해야 합니다. \n\nHeartbleed 버그란 2014년 4월에 발견된 오픈소스 암호화 라이브러리인 OpenSSL의 소프트웨어 버그입니다. 이 공격으로 개인 키 및 세션 쿠키 및 암호를 탈취 당할 위협이 존재합니다. 또한 공격자가 SSL/TLS 암호화 통신을 도청함에 따라서 서비스 및 사용자로부터 민감정보 혹은 기밀정보를 훔칠 수 있습니다.\n\n2014년 3월 21일 구글의 보도 모엘러와 애덤 랭글리는 이 버그를 수정한 패치를 기록했고, 이어서 웹사이트 성능 및 보안 기업인 클라우드플레어에서 2014년 3월 31일 시스템 상의 결점을 수정했습니다. 따라서 AWS IAM에서 관리하는 모든 SSL/TLS 서버 인증서는 해당 패치 이후인 2014년 4월 1일 이후에 배포된 것을 사용해야 합니다.",
@@ -1234,7 +1234,7 @@ export const AWSChecklist = [
   {
     classification: "계정 관리",
     index: "CloudWatch_001",
-    risk: "상",
+    risk: "중",
     name: "AWS 계정 Root 사용자의 사용을 모니터링하고 있는지 확인하시오.",
     description:
       '액세스 키를 사용하여 프로그래밍 방식으로 AWS에 요청을 보낼 수 있습니다. AWS 계정 Root 사용자의 액세스 키는 결제 정보를 포함하여 모든 AWS 서비스의 전체 리소스에 대해 액세스 권한을 가집니다. AWS 계정 Root 사용자에 부여된 권한은 줄일 수 없습니다. 그렇기 때문에 AWS 계정의 Root 사용자는 사용하지 않는 것이 좋습니다.\n\nAWS 계정 Root 사용자의 로그인 및 사용을 모니터링하면 해당 Root 사용자의 사용에 대한 가시성이 제공됩니다.\n\n따라서 CloudWatch의 Metric Filter를 생성해 AWS 계정 Root 사용자의 로그인 및 사용을 모니터링하고, 이러한 상황에 트리거되는 CloudWatch Alrarm을 생성해야 합니다.\n\n이렇게 AWS 계정 Root 사용자의 로그인 및 사용을 모니터링 하기 위한 Metric Filter는 다음과 같습니다.\n{ $.userIdentity.type = "Root" && $.userIdentity.invokedBy NOT EXISTS && $.eventType != "AwsServiceEvent" }',
@@ -1249,7 +1249,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "CloudWatch_002",
-    risk: "상",
+    risk: "중",
     name: "인증되지 않은 API 호출을 모니터링하고 있는지 확인하시오.",
     description:
       '인증되지 않는 사용자가 무단으로 API 호출하는 것을 모니터링하면 응용 프로그램 오류를 찾는 것에 도움이되고, 악의적인 활동을 탐지하는데 걸리는 시간을 줄일 수 있습니다.\n\n따라서 CloudWatch의 Metric Filter를 생성해 인증되지 않은 사용자의 무단 API 호출을 모니터링하고, 이러한 상황에 트리거되는 CloudWatch Alram을 생성해야 합니다.\n\n이러한 인증되지 않은 사용자의 무장 API 호출을 탐지하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.errorCode = "*UnauthorizedOperation") || ($.errorCode = "AccessDenied*") }',
@@ -1264,7 +1264,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "CloudWatch_003",
-    risk: "상",
+    risk: "중",
     name: "AWS Management Console에 MFA 인증 없이 로그인하는 것을 모니터링하고 있는지 확인하시오.",
     description:
       'AWS Management Console에 MFA 인증 없이 Single Factor 로그인하는 것을 모니터링하면 MFA를 통한 보호계층을 추가하지 않은 계정에 대한 가시성을 높일 수 있습니다. AWS 보안 모범 사례에 따르면 모든 Root 사용자 및 IAM 사용자는 MFA를 요구하는 것을 권장하고 있습니다.\n\n따라서 CloudWatch의 Metric Filter를 생성해 AWS Management Console에 MFA 인증 없이 로그인하는 것을 모니터링하고, 이러한 상황에 트리거되는 CloudWatch Alrarm을 생성해야 합니다.\n\n이렇게 AWS Management Console에 MFA 인증 없이 로그인하는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = "ConsoleLogin") && ($.additionalEventData.MFAUsed != "Yes") }',
@@ -1279,7 +1279,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "CloudWatch_004",
-    risk: "상",
+    risk: "중",
     name: "AWS Management Console에 인증실패를 모니터링하고 있는지 확인하시오.",
     description:
       'AWS Management Console에 대한 인증실패를 모니터링하면 자격증명을 무차별 대입 공격과 같은 무차별적으로 적용하려는 시도를 탐지하는데 걸리는 시간을 줄일 수 있습니다.\n\n따라서 CloudWatch의 Metric Filter를 생성해 AWS Management Console에 대한 인증실패를 모니터링하고, AWS Management Console에 로그인 실패가 3회 이상 반복되었을 때 트리거 되는 CloudWatch Alrarm을 생성해야 합니다.\n\n이렇게 AWS Management Console에 대한 인증실패를 모니터링 하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = ConsoleLogin) && ($.errorMessage = "Failed authentication") }',
@@ -1294,7 +1294,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudWatch_005",
-    risk: "상",
+    risk: "중",
     name: "AWS 계정에 IAM 구성이 변경되는 것을 모니터링하고 있는지 확인하시오.",
     description:
       "AWS IAM은 AWS 서비스 및 리소스에 대한 액세스를 안전하게 제어하는데 도움이되는 웹 서비스입니다. AWS IAM을 사용하면 IAM 사용자, 그룹, 역할, 보안 자격증명, 권한 등을 중앙에서 관리할 수 있습니다.\n\nIAM은 AWS 계정 내의 리소스 및 서비스에 대한 액세스 제어를 관리하는 중요한 서비스이기 때문에 IAM 구성이 변경되는 것을 모니터링하는 것은 AWS 클라우드 환경을 안전하게 유지하는데 중요합니다. 보안 모범 사례로써 IAM 서비스 수준에서 이루어진 모든 구성 변경사항을 알고 있어야 합니다. IAM 구성이 변경되는 것을 모니터링하면 심각한 보안 위반, 데이터 유출, 데이터 손실 또는 예상치 못한 요금이 발생하는 것을 방지할 수 있습니다.\n\n따라서 IAM 구성이 변경되는 것을 모니터링하고, 이러한 상황에 트리거되는 CloudWatch Alarm을 생성해야 합니다.\n\n이렇게 IAM 구성이 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = AddUserToGroup) || ($.eventName = AttachGroupPolicy) || ($.eventName = AttachRolePolicy) || ($.eventName = AttachUserPolicy) || ($.eventName = ChangePassword) || ($.eventName = CreateAccessKey) || ($.eventName = CreateAccountAlias) || ($.eventName = CreateGroup) || ($.eventName = CreateLoginProfile) || ($.eventName = CreateOpenIDConnectProvider) || ($.eventName = CreatePolicy) || ($.eventName = CreatePolicyVersion) || ($.eventName = CreateRole) || ($.eventName = CreateSAMLProvider) || ($.eventName = CreateServiceLinkedRole) || ($.eventName = CreateServiceSpecificCredential) || ($.eventName = CreateUser) || ($.eventName = CreateVirtualMFADevice) || ($.eventName = DeactivateMFADevice) || ($.eventName = DeleteAccessKey) || ($.eventName = DeleteAccountAlias) || ($.eventName = DeleteAccountPasswordPolicy) || ($.eventName = DeleteGroup) || ($.eventName = DeleteGroupPolicy) || ($.eventName = DeleteLoginProfile) || ($.eventName = DeleteOpenIDConnectProvider) || ($.eventName = DeletePolicy) || ($.eventName = DeletePolicyVersion) || ($.eventName = DeleteRole) || ($.eventName = DeleteRolePermissionsBoundary) || ($.eventName = DeleteRolePolicy) || ($.eventName = DeleteSAMLProvider) || ($.eventName = DeleteServerCertificate) || ($.eventName = DeleteServiceLinkedRole) || ($.eventName = DeleteServiceSpecificCredential) || ($.eventName = DeleteSigningCertificate) || ($.eventName = DeleteSSHPublicKey) || ($.eventName = DeleteUser) || ($.eventName = DeleteUserPermissionsBoundary) || ($.eventName = DeleteUserPolicy) || ($.eventName = DeleteVirtualMFADevice) || ($.eventName = DetachGroupPolicy) || ($.eventName = DetachRolePolicy) || ($.eventName = DetachUserPolicy) || ($.eventName = EnableMFADevice) || ($.eventName = PutGroupPolicy) || ($.eventName = PutRolePermissionsBoundary) || ($.eventName = PutRolePolicy) || ($.eventName = PutUserPermissionsBoundary) || ($.eventName = PutUserPolicy) || ($.eventName = RemoveClientIDFromOpenIDConnectProvider) || ($.eventName = RemoveUserFromGroup) || ($.eventName = ResetServiceSpecificCredential) || ($.eventName = SetDefaultPolicyVersion) || ($.eventName = UpdateAccessKey) || ($.eventName = UpdateAccountPasswordPolicy) || ($.eventName = UpdateAssumeRolePolicy) || ($.eventName = UpdateGroup) || ($.eventName = UpdateLoginProfile) || ($.eventName = UpdateOpenIDConnectProviderThumbprint) || ($.eventName = UpdateRole) || ($.eventName = UpdateSAMLProvider) || ($.eventName = UpdateServerCertificate) || ($.eventName = UpdateServiceSpecificCredential) || ($.eventName = UpdateSigningCertificate) || ($.eventName = UpdateSSHPublicKey) || ($.eventName = UpdateUser) || ($.eventName = UploadServerCertificate) || ($.eventName = UploadSigningCertificate) || ($.eventName = UploadSSHPublicKey) }\n\n적어도 IAM 정책이 변경되는 것은 모니터링해야 합니다.\n\n이렇게 IAM 정책이 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = DeleteGroupPolicy) || ($.eventName = DeleteRolePolicy) || ($.eventName = DeleteUserPolicy) || ($.eventName = PutGroupPolicy) || ($.eventName = PutRolePolicy) || ($.eventName = PutUserPolicy) || ($.eventName = CreatePolicy) || ($.eventName = DeletePolicy) || ($.eventName = CreatePolicyVersion) || ($.eventName = DeletePolicyVersion) || ($.eventName = AttachRolePolicy) || ($.eventName = DetachRolePolicy) || ($.eventName = AttachUserPolicy) || ($.eventName = DetachUserPolicy) || ($.eventName = AttachGroupPolicy) || ($.eventName = DetachGroupPolicy) }",
@@ -1324,7 +1324,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudWatch_007",
-    risk: "상",
+    risk: "중",
     name: "VPC가 변경되는 것을 모니터링하고 있는지 확인하시오.",
     description:
       "Amazon VPC를 Amazon EC2의 네트워크 계층입니다. Amazon VPC를 이용하면 사용자가 정의한 가상 네트워크로 AWS 리소스를 시작할 수 있습니다.\n\nAmazon VPC, VPC 피어링 연결, 클래식 EC2 인스턴스에 대한 VPC 연결 생성, 업데이트 혹은 삭제하기 위한 API 호출을 모니터링해야 합니다. 이렇게 VPC가 변경되는 것을 모니터링하면 무단 네트워크 액세스 또는 기타 보안 위반으로 이어질 수 있는 우발적이거나 의도적인 변경을 방지할 수 있습니다.\n\n따라서 Amazon VPC가 변경되는 것을 모니터링하고, Amazon VPC, VPC 피어링 연결, 클래식 EC2 인스턴스에 대한 VPC 연결 생성, 업데이트 혹은 삭제하기 위한 API 호출시 트리거되는 CloudWatch Alarm을 생성해야 합니다.\n\n이렇게 Amazon VPC가 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = CreateVpc) || ($.eventName = DeleteVpc) || ($.eventName = ModifyVpcAttribute) || ($.eventName = AcceptVpcPeeringConnection) || ($.eventName = CreateVpcPeeringConnection) || ($.eventName = DeleteVpcPeeringConnection) || ($.eventName = RejectVpcPeeringConnection) || ($.eventName = AttachClassicLinkVpc) || ($.eventName = DetachClassicLinkVpc) || ($.eventName = DisableVpcClassicLink) || ($.eventName = EnableVpcClassicLink) }",
@@ -1339,7 +1339,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudWatch_008",
-    risk: "상",
+    risk: "중",
     name: "보안 그룹이 변경되는 것을 모니터링하고 있는지 확인하시오.",
     description:
       "보안 그룹은 인스턴스에 대한 인바운드 및 아웃바운드 트래픽을 제어하는 가상 방화벽 역할을 합니다.\n\n보안 그룹을 생성, 업데이트 혹은 삭제하기 위한 API 호출을 모니터링해야 합니다. 보안 그룹이 변경되는 것을 모니터링하면 0.0.0.0/0으로 부터의 액세스 혹은 무단으로 액세스로 이어질 수 있는 의도하지 않은 인바운드 및 아웃바운드 규칙이 생성, 변경되는 것을 방지할 수 있습니다. 이를 통해 AWS 리소스 및 서비스가 의도하지 않게 노출되지 않도록 할 수 있습니다.\n\n따라서 보안 그룹이 변경되는 것을 모니터링 하고, 생성, 업데이트 혹은 삭제하기 위한 API가 호출될 때 트리거되는 CloudWatch Alarm을 생성해야 합니다.\n\n이렇게 보안 그룹이 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = AuthorizeSecurityGroupIngress) || ($.eventName = AuthorizeSecurityGroupEgress) || ($.eventName = RevokeSecurityGroupIngress) || ($.eventName = RevokeSecurityGroupEgress) || ($.eventName = CreateSecurityGroup) || ($.eventName = DeleteSecurityGroup) }",
@@ -1369,7 +1369,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudWatch_010",
-    risk: "상",
+    risk: "중",
     name: "Route Table이 변경되는 것을 모니터링하고 있는지 확인하시오.",
     description:
       "Route Table에는 서브넷 또는 게이트웨이의 네트워크 트래픽이 전송되는 위치를 결정하는데 사용되는 라우팅 규칙집합이 포함되어 있습니다.\n\nRoute Table을 생성, 교체, 삭제, 연결 해제하기 위한 API 호출을 모니터링해야 합니다. Route Table가 변경되는 것을 모니터링하면 제어되지 않은 네트워크 트래픽으로 이어질 수 있는 우발적이거나 의도적인 변경을 방지할 수 있습니다\n\n따라서 Route Table이 변경되는 것을 모니터링하고, Route Table을 생성, 교체, 삭제, 연결 해제하기 위한 API가 호출될 때 트리거되는 CloudWatch Alarm을 생성해야 합니다.\n\n이렇게 Route Table이 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = CreateRoute) || ($.eventName = CreateRouteTable) || ($.eventName = ReplaceRoute) || ($.eventName = ReplaceRouteTableAssociation) || ($.eventName = DeleteRouteTable) || ($.eventName = DeleteRoute) || ($.eventName = DisassociateRouteTable) }",
@@ -1384,7 +1384,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudWatch_011",
-    risk: "상",
+    risk: "하",
     name: "Network Gateway(Internet Gateway, NAT Gateway 등)가 변경되는 것을 모니터링하고 있는지 확인하시오.",
     description:
       "Network Gateway은 VPC 외부의 대상으로 트래픽을 송/수신 하기 위한 통로입니다. Network Gateway에는 Internet Gateway, Customer Gateway, NAT Gateway등이 존재합니다.\n\nNetwork Gateway를 생성, 업데이트 혹은 삭제하기 위한 API 호출을 모니터링해야 합니다. Network Gateway가 변경되는 것을 모니터링하면 네트워크 액세스, AWS VPC와 인터넷 간의 연결 손실, 사용자 간의 VPN 연결 손실로 이어질 수 있는 예기치 않은 변경을 방지할 수 있습니다. 또한 모든 송/수신 트래픽이 Network Gateway를 통해 VPC 밖으로 전송되는 것을 보장할 수 있습니다.\n\n따라서 Network Gateway가 변경되는 것을 모니터링하고, Custemor Gateway와 Internet Gateway가 생성, 업데이트 혹은 삭제하기 위한 API가 호출될 때 트리거되는 CloudWatch Alarm을 생성해야 합니다.\n\n이렇게 Network Gateway가 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = CreateCustomerGateway) || ($.eventName = DeleteCustomerGateway) || ($.eventName = AttachInternetGateway) || ($.eventName = CreateInternetGateway) || ($.eventName = DeleteInternetGateway) || ($.eventName = DetachInternetGateway) }",
@@ -1399,7 +1399,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudWatch_012",
-    risk: "상",
+    risk: "하",
     name: "Amazon EC2 인스턴스의 상태가 변경되는 것을 모니터링하고 있는지 확인하시오.",
     description:
       "Amazon EC2는 클라우드에서 컴퓨팅 파워와 규모를 자유자재로 변경할 수 있는 웹 서비스입니다.\n\nAmazon EC2 인스턴스 상태 변경을 모니터링하면 리소스 가용성에 대한 최신 상태를 유지할 수 있고, Auto Scaling의 수명주기에 대한 통찰력을 얻을 수 있습니다. 또한 다운타임을 완화하고 데이터 손실을 방지할 수 있고, 예상치 못한 요금이 발생하는 것을 방지할 수 있습니다.\n\n따라서 Amazon EC2 인스턴스의 상태가 변경되는 것을 모니터링하고, 상태가 변경될 때 트리거되는 CloudWatch Alarm을 생성해야 합니다.\n\n이렇게 Amazon EC2 인스턴스의 상태가 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventName = RunInstances) || ($.eventName = RebootInstances) || ($.eventName = StartInstances) || ($.eventName = StopInstances) || ($.eventName = TerminateInstances) }",
@@ -1414,7 +1414,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudWatch_013",
-    risk: "상",
+    risk: "하",
     name: "Amazon S3 Bucket 구성이 변경되는 것을 모니터링하고 있는지 확인하시오.",
     description:
       "Amazon S3는 인터넷 스토리지 서비스입니다. Amazon S3는 데이터를 Bucket 내에 객체로 저장합니다.\n\nS3 Bucket의 정책, ACL, CORS, 복제 또는 수명주기를 생성, 업데이트 또는 삭제하기 위한 API 호출을 모니터링하는 것이 좋습니다. S3 Bucket과 관련된 구성이 변경되는 것을 모니터링하면 데이터 액세스 혹은 기타 보안 위반으로 이어질 수 있는 우발적이거나 의도적인 변경을 방지할 수 있습니다.\n\n따라서 이러한 S3 Bucket 구성이 변경되는 것을 모니터링하고, 이러한 상황에 트리거되는 CloudWatch Alarm을 생성해야 합니다.\n\n이렇게 S3 Bucket 구성이 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventSource = s3.amazonaws.com) && (($.eventName = PutBucketAcl) || ($.eventName = PutBucketPolicy) || ($.eventName = PutBucketCors) || ($.eventName = PutBucketLifecycle) || ($.eventName = PutBucketReplication) || ($.eventName = DeleteBucketPolicy) || ($.eventName = DeleteBucketCors) || ($.eventName = DeleteBucketLifecycle) || ($.eventName = DeleteBucketReplication)) }",
@@ -1429,7 +1429,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "CloudWatch_014",
-    risk: "중",
+    risk: "상",
     name: "AWS KMS 구성이 변경되는 것을 모니터링하고 있는지 확인하시오.",
     description:
       "AWS KMS(Key Management Service)는 데이터를 손쉽게 암호화 키를 생성하고 관리해주는 관리형 암호화 서비스입니다. AWS KMS는 AWS 서비스 전반에서 민감한 데이터를 암호화할 수 있는 고가용성 키 저장소와 관리 및 감사 솔루션을 제공합니다. KMS는 다른 AWS 서비스와 통합되어 이러한 서비스에서 저장하고 관리하는 데이터를 보호하는데 사용됩니다.\n\n모니터링은 AWS KMS에서 고객 마스터 키(CMK)의 가용성, 상태 및 사용을 이해하고 AWS 솔루션의 안정성, 가용성 및 성능을 유지하는 것에 있어서 중요한 부분입니다. AWS 솔루션의 모든 부분에서 모니터링을 수행하면 다중 지점 오류가 발생할 경우 디버그하는데 도움이 됩니다.\n\n보안 모범 사례로써 AWS KMS 수준에서 이루어진 모든 구성 변경 사항을 알고 있어야합니다. AWS KMS를 사용하면 암호화한 데이터에 대한 액세스 권한을 더 많이 확보할 수 있습니다. 애플리케이션에서 직접 또는 KMS와 통합된 AWS 서비스를 통해 키 관리 암호화 기능을 사용할 수 있습니다. KMS를 사용하면 고객 마스터 키(CMK)를 사용할 수 있는 사용자를 제어하고 암호화된 클라우드 데이터에 대한 전체 액세스 권한을 얻을 수 있습니다. 따라서 AWS KMS 수준에서 수행되는 모든 구성 변경 모니터링은 암호화된 데이터를 안전하게 유지하는데 필수적입니다.\n\n따라서 AWS KMS 구성이 변경되는 것을 모니터링하고, 이러한 상황에 트리거되는 CloudWatch Alarm을 생성해야 합니다.\n\n이렇게 AWS KMS 구성이 변경되는 것을 모니터링하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventSource = kms.amazonaws.com) && (($.eventName = CreateAlias) || ($.eventName = CreateGrant) || ($.eventName = CreateKey) || ($.eventName = EnableKey) || ($.eventName = EnableKeyRotation) || ($.eventName = ImportKeyMaterial) || ($.eventName = PutKeyPolicy) || ($.eventName = RetireGrant) || ($.eventName = RevokeGrant) || ($.eventName = ScheduleKeyDeletion) || ($.eventName = TagResource) || ($.eventName = UntagResource) || ($.eventName = UpdateAlias) || ($.eventName = UpdateKeyDescription) || ($.eventName = DisableKey) || ($.eventName = DisableKeyRotation) || ($.eventName = CancelKeyDeletion) || ($.eventName = DeleteAlias) || ($.eventName = DeleteImportedKeyMaterial)) }\n\n적어도 KMS CMK의 상태를 비활성화 혹은 예약된 삭제로 변경하는 것은 모니터링해야 합니다.\n\n이렇게 KMS CMK의 상태를 비활성화 혹은 예약된 삭제로 변경되는 것을 모니터링 하기 위한 Metric Filter는 다음과 같습니다.\n{ ($.eventSource = kms.amazonaws.com) && (($.eventName = DisableKey) || ($.eventName = ScheduleKeyDeletion)) }\n\n",
@@ -1474,7 +1474,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "S3_001",
-    risk: "중",
+    risk: "상",
     name: "S3 버킷에 대해 버킷 정책이 공개적으로 접근가능하지 않도록 설정하였는지 확인하시오.",
     description: "",
     inspection:
@@ -1500,7 +1500,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "S3_003",
-    risk: "중",
+    risk: "상",
     name: "S3 버킷에 대해 퍼블릭 사용자의 접속을 허용하지 않는지 확인하시오",
     description: "",
     inspection:
@@ -1552,7 +1552,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "S3_007",
-    risk: "중",
+    risk: "하",
     name: "S3 버킷을 정적 웹사이트로 구성할 때 정적 웹 사이트 호스팅을 활성화 하였는지 확인하시오.",
     description: "",
     inspection: "",
@@ -1563,7 +1563,7 @@ export const AWSChecklist = [
   {
     classification: "패치 관리",
     index: "S3_008",
-    risk: "중",
+    risk: "하",
     name: "S3 버킷에 대해 버전 관리를 사용하고 있는지 확인하시오 (가용성)",
     description: "",
     inspection:
@@ -1588,7 +1588,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "S3_010",
-    risk: "중",
+    risk: "상",
     name: "S3 버킷에 대해 객체의 기본 암호화를 사용하고 있는지 확인하시오",
     description: "",
     inspection:
@@ -1601,7 +1601,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "S3_011",
-    risk: "중",
+    risk: "상",
     name: "서버 기본 암호화를 활성화 했는지 확인하시오",
     description: "",
     inspection:
@@ -1625,7 +1625,7 @@ export const AWSChecklist = [
   {
     classification: "권한 관리",
     index: "Lambda_001",
-    risk: "중",
+    risk: "상",
     name: "둘 이상의 Lambda 함수가 동일한 IAM 역할을 사용하지 않는지 확인하시오",
     description:
       "AWS Lambda 함수와 해당 IAM 역할 간에는 항상 일대일 관계가 있어야합니다. 즉, 각 Lambda 함수에는 자체 IAM 실행 역할이 있어야하므로이 역할을 함수간에 공유해서는 안됩니다.",
@@ -1670,7 +1670,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "Lambda_004",
-    risk: "중",
+    risk: "상",
     name: "Amazon Lambda 함수가 모든 사람에게 노출되지 않는지 확인하시오",
     description:
       "Lambda 함수의 경우 함수를 호출하거나 관리하기 위한 권한을 계정에 부여할 수 있습니다. 여러 구문을 추가하여 여러 계정에 대한 액세스 권한을 부여하거나, 모든 계정이 함수를 호출하도록 할 수 있습니다. 계정에서의 활동에 대한 응답으로 함수를 호출하는 AWS 서비스에 호출 권한을 부여하도록 정책을 사용할 수도 있습니다.",
@@ -1683,24 +1683,9 @@ export const AWSChecklist = [
     provider: "AWS",
   },
   {
-    classification: "접근 관리",
-    index: "Lambda_005",
-    risk: "중",
-    name: "Lambda 함수가 VPC의 리소스에 액세스하도록 구성되어 있는지 확인하시오",
-    description:
-      "AWS 계정에서 VPC(Virtual Private Cloud)의 프라이빗 서브넷에 연결하도록 Lambda 함수를 구성할 수 있습니다. Amazon Virtual Private Cloud(Amazon VPC)를 사용하여 데이터베이스, 캐시 인스턴스, 내부 서비스 등과 같은 리소스에 대해 프라이빗 네트워크를 생성하십시오. 함수를 VPC에 연결하여 함수가 실행되는 동안 프라이빗 리소스에 액세스합니다.",
-    inspection:
-      "1. AWS Management 콘솔에 로그인하고 https://console.aws.amazon.com/lamda/ 에서 Lamda 콘솔을 엽니다. \n 2. 좌측 네비게이션 바에서 '함수'를 클릭합니다.\n 3. 확인할 Lambda 함수를 선택합니다.\n 4. 구성 탭의 VPC 섹션에서 VPC 식별자를 확인합니다. 현재 선택한 VPC가 없는 경우 대신 VPC 구성 없음인 경우, 선택한 Amazon Lambda 함수가 VPC와 연결되지 않으므로 함수가 VPC 별 AWS 리소스에 액세스할 수 없습니다.",
-    action:
-      "1. AWS Management Console에 로그인한 후, Lambda 대시 보드로 이동합니다 .\n 2. 탐색 패널의 AWS Lambda 섹션에서 함수를 선택합니다 .\n 3. 수정하려는 AWS Lambda 함수를 선택합니다.\n 확인할 Lambda 함수를 클릭합니다.\n 4. 구성 탭의 VPC 섹션에서 편집을 클릭합니다.\n 5. VPC 편집 페이지에서 VPC ID를 선택합니다.\n 6. 두 개 이상의 서브넷을 선택하고, VPC 네트워크 구성을 설정하는 데 사용할 VPC 보안 그룹(들)을 선택합니다. Lambda 함수를 VPC와 연결하면 함수가 기본 인터넷 액세스를 잃게됩니다. AWS Lambda 함수에 대한 외부 인터넷 액세스가 필요한 경우 선택한 보안 그룹이 아웃 바운드 연결을 허용하는지 확인하고 VPC에 NAT 게이트웨이가 연결되어 있는지 확인하십시오.\n 8. 인바운드, 아웃바운 규칙을 확인하고 저장 버튼을 클릭하여 함수 구성을 업데이트합니다.",
-    reference:
-      "https://www.cloudconformity.com/knowledge-base/aws/Lambda/function-in-vpc.html\nhttps://docs.aws.amazon.com/ko_kr/lambda/latest/dg/configuration-vpc.html",
-    provider: "AWS",
-  },
-  {
     classification: "서비스 관리",
-    index: "Lambda_006",
-    risk: "중",
+    index: "Lambda_005",
+    risk: "하",
     name: "Lambda 함수에 최신 버전의 런타임 환경이 사용되는지 확인하시오",
     description:
       "런타임은 단일 버전의 언어, 여러 버전의 언어 또는 여러 언어를 지원할 수 있습니다. (AWS Lambda는 서비스의 모든 사용자에게 단일 버전의 운영 체제와 관리형 언어 런타임을 제공합니다. Lambda에서 사용할 자체 언어 런타임을 가져올 수 있습니다.) 언어 또는 프레임워크 버전이 수명 종료되면 해당 버전의 런타임이 더 이상 사용되지 않습니다. \nAWS 모범 사례를 준수하고 최신 소프트웨어 기능을 받고, 최신 보안 패치와 버그 수정을 받고, 더 나은 성능과 안정성의 혜택을 누리려면 항상 Amazon Lambda 함수에 최신 버전의 실행 환경을 사용해야합니다.",
@@ -1714,8 +1699,8 @@ export const AWSChecklist = [
   },
   {
     classification: "서비스 관리",
-    index: "Lambda_007",
-    risk: "중",
+    index: "Lambda_006",
+    risk: "하",
     name: "Lambda 함수에 대해 추적이 활성화되어 있는지 확인하시오",
     description:
       "함수를 호출하는 서비스에서 X-Ray 추적을 활성화한 경우 Lambda는 자동으로 추적을 X-Ray로 보냅니다.\nAWS X-Ray를 사용하면 애플리케이션의 구성 요소를 시각화하고, 성능 병목 현상을 식별하고, 오류가 발생한 요청을 문제 해결할 수 있습니다. Lambda 함수는 추적 데이터를 X-Ray로 보내고, X-Ray는 데이터를 처리하여 서비스 맵과 검색 가능한 추적 요약을 생성합니다.",
@@ -1729,8 +1714,8 @@ export const AWSChecklist = [
   },
   {
     classification: "암호화",
-    index: "Lambda_008",
-    risk: "중",
+    index: "Lambda_007",
+    risk: "상",
     name: "Lambda 환경 변수에 대해 암호화가 활성화되어 있는지 확인하시오",
     description:
       "환경 변수를 사용하면 코드를 업데이트하지 않고도 함수의 동작을 조정할 수 있습니다. 환경 변수는 함수의 버전별 구성에 저장된 문자열 쌍입니다. Lambda 런타임은 코드에서 환경 변수를 사용할 수 있게 하고 함수 및 호출 요청에 대한 정보가 포함된 추가 환경 변수를 설정합니다.\nLambda는 계정에서 생성한 키(AWS 관리형 고객 마스터 키(CMK))로 환경 변수를 암호화합니다. 기본 키 대신에 사용할 Lambda에 자체 키를 제공하는 방법을 선택할 수도 있습니다. 키를 제공하면 키에 대한 액세스 권한이 있는 계정의 사용자만 함수에서 환경 변수를 보거나 관리할 수 있습니다. 또한 조직이 암호화에 사용되는 키를 관리하고 교체 시기를 제어해야 하는 내부 또는 외부 요구 사항을 가질 수 있습니다.",
@@ -1744,7 +1729,7 @@ export const AWSChecklist = [
   },
   {
     classification: "암호화",
-    index: "Lambda_009",
+    index: "Lambda_008",
     risk: "중",
     name: "Lambda 환경 변수가 KMS CMK로 암호화하는지 확인하시오",
     description:
@@ -1760,7 +1745,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "EC2_001",
-    risk: "중",
+    risk: "상",
     name: "모든 AWS 계정이 AMI에 접근할 수 없도록 설정되어있는지 확인하시오.",
     description:
       "\nAmazon Machine Images(AMI)는 인스턴스를 시작하는 데 필요한 정보를 제공합니다. 동일한 구성의 인스턴스가 필요할 때는 AMI르 이용하여 여러 인스턴스를 만들 수 있습니다.  그러나 EC2에서는 소유한 AMI를 퍼블릭으로 설정할 경우 실행 중인 인스턴스를 공격하거나 손상시킬 수 있는 요소들이 노출될 수 있기 때문에 AMI에 대한 퍼블릭 액세스를 허용하는 것은 주의해야 합니다. 따라서 AMI를 공유할 때 민감한 데이터의 유출을 방지하려면 공유 Linux AMI 지침에 설명된 보안상 고려 사항을 확인하여 권장 조치를 따라야 합니다.",
@@ -1805,7 +1790,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EC2_004",
-    risk: "중",
+    risk: "상",
     name: "인스턴스의 '보안 그룹 이름'이 'launch-wizard-xx'로 시작하는 보안 그룹과 연결되어 있지 않도록 설정했는지 확인하시오.",
     description:
       '\n\n\n\n보안 그룹은 EC2 인스턴스에 대한 수신 및 발신 트래픽을 제어하는 가상 방화벽 역할을 합니다. 인바운드 규칙은 인스턴스로 들어오는 트래픽을 제어하고 아웃바운드 규칙은 인스턴스에서 나가는 트래픽을 제어합니다. \nEC2 콘솔에서 인스턴스를 시작하면 인스턴스 시작 마법사가 새 보안 그룹을 생성할 때 자동으로 이름을 "launch-wizard-xx"로 정의하며 기본 보안 그룹 대신 해당 그룹을 인스턴스와 연결할 수 있습니다. 그러나 해당 보안 그룹은 모든 소스(ex) 0.0.0.0/0)에서 포트 22의 인바운드 인그레이스 트래픽을 허용하는 기본 구성과 함께 제공되는 것입니다. 이는 해당 보안 그룹이 연결되어 있는 인스턴에 해킹, 무차별 공격 또는 D-Dos(서비스 거부) 공격과 같은 악의적인 활동의 기회가 증가하게 됩니다. \n',
@@ -1820,7 +1805,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EC2_005",
-    risk: "중",
+    risk: "상",
     name: "ASG(Auto Scaling Group)의 시작 구성에 '보안 그룹 이름'이 'AutoScaling-Security-Group-xx'로 시작하는 보안 그룹과 연결되어 있지 않도록 설정했는지 확인하시오.",
     description:
       "\n\nAmazon EC2 Auto Scailing 시작 구성 생성 설정\n보안 그룹에서 그룹의 인스턴스와 연결할 보안 그룹을 생성하거나 선택합니다. Create a new security group(새 보안 그룹 생성) 옵션을 선택된 상태로 두면 AutoScaling-Security-Group-xx'로 시작하는 보안 그룹이 생성됩니다.\n이 보안 그룹은 Linux를 실행하는 Amazon EC2 인스턴스에 대해 기본 SSH 규칙이 구성되고, 기본 RDP 규칙은 Windows를 실행하는 Amazon EC2 인스턴스에 대해 구성됩니다.\n해당 규칙은 모든 소스( 0.0.0.0/0)에 대한  인바운드를 허용합니다.",
@@ -1834,7 +1819,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EC2_006",
-    risk: "중",
+    risk: "상",
     name: "default 보안그룹과 연결된 EC2 '인스턴스'나 '시작 구성' 또는 '시작 템플릿'이 존재하는지 확인하시오.",
     description:
       "인스턴스를 시작할 때 보안 그룹을 지정하지 않을 경우 VPC에 대해 인스턴스는 'default' 보안 그룹과 자동으로 연결됩니다.\n'default' 보안 그룹의 규칙은 'default' 보안 그룹과 연결된 다른 인스턴스의 모든 인바운드 트래픽 허용하고,  보안 그룹은 인바운드 규칙에서 소스 보안 그룹으로 지정됩니다. 그리고 인스턴스의 모든 아웃바운드 트래픽을 허용합니다.\n'default' 보안 그룹을 사용하여 퍼블릭 액세스를 허용할 경우 해킹, 무차별 대입 공격(Brute-force attack) 또는 서비스 거부(DoS attack) 공격에 취약합니다.",
@@ -1849,7 +1834,7 @@ export const AWSChecklist = [
   {
     classification: "",
     index: "",
-    risk: "중",
+    risk: "",
     name: "",
     description: "",
     inspection:
@@ -1862,7 +1847,7 @@ export const AWSChecklist = [
   {
     classification: "",
     index: "",
-    risk: "중",
+    risk: "",
     name: "",
     description: "",
     inspection:
@@ -1875,7 +1860,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EC2_007",
-    risk: "중",
+    risk: "하",
     name: "EBS를 사용하는 EC2 인스턴스가 최대 절전모드 기능이 활성화되어 있는지 확인하시오.",
     description:
       "EC2 인스턴스에 대한 '최대 절전 모드(Hibernation, 또는 수면 모드)'를 활성화하는 것은 인스턴스 상태가 '최대 절전 모드'가 될 때 인메모리 상태가 루트 EBS 볼륨에 있는 파일에 저장된 다음 인스턴스를 종료 시킵니다. EBS 볼륨에 저장된 데이터들은 인스턴스를 재시작할 때, 이전에 연결된 데이터 볼륨이 다시 연결되어 EBS 볼륨 이전 상태로 되돌릴 수 있습니다. \n인스턴스는 60일까지만 최대 절전 모드로 유지할 수 있습니다. 인스턴스를 60일 이상 유지하려면 최대 절전 모드의 인스턴스를 재개한 다음 '최대절전 모드'를 설정하지 않고 중지와 시작을 수행해야 합니다.",
@@ -1890,7 +1875,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EC2_008",
-    risk: "중",
+    risk: "하",
     name: "ASG(Auto Scaling Groups)에 속하지 않는 인스턴스에 대해 종료 방지 기능을 사용하도록 설정했는지 확인하시오.",
     description:
       "애플리케이션 아키텍처에 Amazon EC2 Auto Scaling를 추가하는 것은 AWS 클라우드의 이점을 극대화하는 한 가지 방법입니다.ASG(Auto Scaling Group)에서는 인스턴스가 비정상 상태일 때 이를 감지하여 종료한 다음 이를 대체할 인스턴스를 시작할 수 있습니다. 또한 애플리케이션이 항상 현재 트래픽 요구를 처리할 수 있는 올바른 용량을 갖추도록 도와줍니다. 이를 통해 비용 관리도 개선할 수 있습니다.\n\n종료 방지 기능을 활성화 하지 않으면  EC2, 콘솔, 명령줄, API를 사용해서 인스턴스를 종료할 수 있습니다. 그러나  인스턴스가 실수로 종료되지 않도록 하기 위해 해당 인스턴스에 대한 종료 방지 기능을 활성화를 해야 합니다. Auto Scaling 그룹에 있는 인스턴스의 종료 보호를 위해선 'EC2 Auto Scaling 설정'에서 제어할 수 있습니다.",
@@ -1905,7 +1890,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EC2_009",
-    risk: "중",
+    risk: "하",
     name: "인스턴스가 ASG(Auto Scaling Groups) 내에서 실행되었는지 확인하시오.",
     description:
       "애플리케이션 아키텍처에 Amazon EC2 Auto Scaling를 추가하는 것은 AWS 클라우드의 이점을 극대화하는 한 가지 방법입니다.ASG(Auto Scaling Group)에서는 인스턴스가 비정상 상태일 때 이를 감지하여 종료한 다음 이를 대체할 인스턴스를 시작할 수 있습니다. 또한 애플리케이션이 항상 현재 트래픽 요구를 처리할 수 있는 올바른 용량을 갖추도록 도와줍니다. 이를 통해 비용 관리도 개선할 수 있습니다.",
@@ -1920,7 +1905,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EC2_010",
-    risk: "중",
+    risk: "상",
     name: "인스턴스의 ASG(Auto Scaling Groups)의 시작 구성/시작 템플릿에 각 계층에서 사용하는 보안그룹을 적용하여 구성했는지 확인하시오.",
     description:
       "각 계층에서 요구하는 보안그룹을 각  Auto Scaling의 'Launch Configuration'에 적용합니다.\n웹/앱 계층의 인스턴스는  시작 템플릿 또는 Auto-Scaling Launch Configuration에 구성된 보안그룹을 사용하여 시작합니다. 이 보안그룹은 각 계층의 관련된 트래픽만 허용하며, 시작 구성에서 해당 계층 보안 그룹으로만 구성되었는지 확인해야 합니다.\n",
@@ -1935,7 +1920,7 @@ export const AWSChecklist = [
   {
     classification: "",
     index: "",
-    risk: "중",
+    risk: "",
     name: "",
     description: "",
     inspection:
@@ -1948,7 +1933,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "EC2_011",
-    risk: "중",
+    risk: "상",
     name: "Web-tier ELB에 연결된 보안그룹이 다른 계층에서 사용되고 있는지 확인하시오.",
     description:
       "웹 계층의 ELB가 3-Tier 아키텍쳐에서 외부 액세스를 허용합니다.\n웹 계층의 ELB는 유일한 공개 대상이며 모든 IP 리소스 (0.0.0.0/0)에서 어플리케이션 포트의 인바운드 트래픽을 허용하는 규칙이 있어야 합니다.\n웹 계층 ELB에 대한 아웃바운드 보안 그룹 규칙은 적절한 애플리케이션 포트에 대한 백엔드 웹 서버 인스턴스로만 제한되어야 합니다.\n공개적으로 액세스할 수 없는 다른 인스턴스에 웹 계층의 ELB 보안 그룹을 연결하면 해당 웹 계층이 무단 액세스에 노출됩니다.",
@@ -1978,7 +1963,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "EC2_013",
-    risk: "중",
+    risk: "상",
     name: "AMI의 암호화를 설정했는지 확인하시오.",
     description:
       "Amazon 머신 이미지(AMI)는 인스턴스를 시작하는 데 필요한 정보를 제공합니다. 동일한 구성의 인스턴스가 여러 개 필요할 때는 한 AMI에서 여러 인스턴스를 시작할 수 있습니다. \n\nAmazon EBS 스냅샷의 지원을 받는 AMI에서는 Amazon EBS 암호화를 활용할 수 있습니다. 데이터 볼륨과 루트 볼륨 모두의 스냅샷을 암호화하고 AMI에 연결할 수 있습니다. 전체 EBS 암호화 지원을 통해 인스턴스를 시작하고 이미지를 복사할 수 있습니다. 이러한 작업을 위한 암호화 파라미터는 AWS KMS(Key Management Service)가 지원되는 모든 리전에서 사용가능 합니다. \n암호화 된 EBS 볼륨이 있는 EC2 인스턴스는 다른 인스턴스와 동일한 방법으로 AMI에서 시작될 수 있습니다. 또한 암호화되지 않은 EBS 스냅샷을 지원하는 AMI에서 인스턴스를 시작할 때, 해당 볼륨의 일부 또는 전체를 암호화 할 수도 있습니다.",
@@ -1993,7 +1978,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "KMS_001",
-    risk: "중",
+    risk: "상",
     name: "Amazon KMS 마스터 키가 모든 사람에게 노출되지 않는지 확인하시오.",
     description:
       "계정 관리자는 IAM 자격 증명(즉, 사용자, 그룹, 역할)에 권한 정책을 연결할 수 있고, 일부 서비스(예: AWS KMS)에서는 다른 종류의 리소스에 대한 권한 정책 연결도 지원합니다.\n한 AWS 계정의 IAM 사용자 또는 역할이 다른 AWS 계정의 고객 마스터 키 (CMK)를 사용하도록 허용 할 수 있습니다. CMK를 생성하거나 기존 CMK에 대한 권한을 변경할 때 이러한 권한을 추가 할 수 있습니다.\n따라서, 보안 주체에게 CMK를 사용할 수있는 권한을 부여 할 때 주의해야 합니다. 사용자에게 필요한 작업에만 필요한 CMK에 대한 액세스 권한만 부여하도록 합니다. 또한 익숙하지 않은 CMK, 특히 다른 계정의 CMK를 사용하지 않도록 합니다. 악의적인 사용자가 CMK를 사용하여 귀하 또는 귀하의 계정에 대한 정보를 얻을 수있는 권한을 귀하에게 부여할 수 있습니다.",
@@ -2008,7 +1993,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "KMS_002",
-    risk: "중",
+    risk: "상",
     name: "Amazon KMS 마스터 키가 알 수없는 교차 계정 액세스를 허용하지 않는지 확인하시오.",
     description:
       "한 IAM 계정의 AWS 사용자 또는 역할이 다른 고객 마스터 키 계정의 CMK(AWS)를 사용하도록 허용할 수 있습니다. 을 생성하거나 기존 CMK에 대한 권한을 변경할 때 이러한 권한을 추가할 수 있습니다.\n보안 주체에 CMKs를 사용할 수 있는 권한을 부여하지 않도록 주의하십시오. 가능하면 최소 권한 원칙을 따르십시오. 사용자에게 필요한 작업에만 필요한 CMKs에 대한 액세스 권한을 부여합니다. 또한 익숙하지 않은 CMK, 특히 다른 계정의 CMK를 사용할 때는 주의해야 합니다. 악의적인 사용자가 CMK를 사용하여 사용자 또는 사용자 계정에 대한 정보를 가져올 수 있는 권한을 부여할 수 있습니다.",
@@ -2023,7 +2008,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "KMS_003",
-    risk: "중",
+    risk: "하",
     name: "Amazon KMS 마스터 키가 삭제 예약되거나 비활성화되어 있는지 확인하시오.",
     description:
       "CMK가 삭제되면 해당 키로 암호화 된 모든 데이터를 복구 할 수 없게됩니다. 암호화 된 데이터 손실을 방지하기 위해 실수로 또는 의도적으로 삭제 예약 된 비활성화 된 AWS KMS 고객 마스터 키 (CMK)를 식별합니다.",
@@ -2051,23 +2036,8 @@ export const AWSChecklist = [
     provider: "AWS",
   },
   {
-    classification: "암호화",
-    index: "KMS_005",
-    risk: "중",
-    name: "KMS 고객 마스터 키 (CMK)가 사용 중인지 확인하시오",
-    description:
-      "키 사용은 CMK가 암호화 및 암호 해독 또는 서명 및 확인에 사용되는지 여부를 결정하는 CMK 속성입니다. 둘 다 선택할 수는 없습니다. 두 가지 이상의 작업 유형에 CMK를 사용하면 두 작업의 제품이 공격에 더 취약해집니다.\n대칭 CMKs의 키 사용은 항상 암호화 및 암호 해독입니다. 타원 곡선(ECC) CMKs의 키 사용은 항상 서명 및 확인입니다. RSA CMKs의 키 사용만 선택하면 됩니다. 키 사용은 를 생성CMK할 때 선택하며 이후에는 변경할 수 없습니다. 잘못된 키 사용을 선택한 경우 를 삭제CMK하고 새 키를 생성합니다.",
-    inspection:
-      "1. AWS Management 콘솔에 로그인한 후, EC2 대시 보드로 이동합니다.\n2. 탐색 패널의 Elastic Block Store 에서 볼륨을 클릭하십시오.\n3. 검사해야하는 EBS 볼륨을 선택합니다.\n4. 설명 탭에서 KMS 키 별칭 값을 확인합니다.\n5. 사용된 KMS 키 별칭 (이름)이 aws / ebs 이면 해당 볼륨은 AWS 관리형 키를 사용하는 것입니다. 이 키는 볼륨 생성시 암호화를위한 CMK를 지정하지 않을 때 기본적으로 사용됩니다. 볼륨 암호화를 완전히 제어하려면 자체 CMK 고객 관리 키를 사용해야 합니다.",
-    action:
-      '1. AWS Management 콘솔에 로그인한 후, KMS 대시 보드로 이동합니다 .\n2. 탐색 패널에서 고객 관리형 키를 클릭합니다.\n3. 상단 메뉴에서 [키 생성]을 클릭합니다.\n4. 키 유형, 별칭과 설명을 입력합니다.\n5.  키 관리 권한 정의 페이지에서 새로운 CMK를 관리할 수 있는 IAM 사용자 및 역할을 선택하고 [다음]을 클릭합니다.\n6. 키 사용 권한 정의 페이지에서 새로운 CMK를 사용할 수 있는 IAM 사용자 및 역할을 선택합니다. \n(7) CMK를 암호화에 사용할 수있는 다른 AWS 계정을 추가하려면 [외부 계정 추가]를 클릭합니다. 외부 AWS 계정의 소유자도 IAM 사용자에 대한 정책을 생성하여 이 CMK에 대한 액세스 권한을 제공해야합니다. 이후 [다음]을 클릭하십시오.\n8. 키 정책 검토 및 편집 페이지에서 미리 정의된 액세스 정책을 검토하고 [완료]를 클릭합니다. 키가 성공적으로 생성되면 KMS 서비스 대시 보드에 "별칭이 ~~이고 키 ID가 ~~~~인 마스터 키가 생성되었습니다."라는 확인 메시지가 표시됩니다.\n9. CMK를 구현하여 EBS 볼륨 데이터를 암,복호화하기 위해 EC2 대시 보드로 이동합니다.\n10. 탐색 패널의 Elastic Block Store 에서 볼륨을 클릭하십시오 .\n11. 암호화된 EBS 볼륨을 선택하여 작업에서 스냅샷 생성을 선택합니다. \n12. 스냅샷 생성 페이지에서 볼륨과 설명을 입력합니다.\n14. 탐색 패널의 Elastic Block Store 에서 스냅샷을 클릭하십시오 .\n15. 새로 생성된 EBS 스냅샷을 선택하고 작업에서 복사를 선택합니다.\n17. 스냅샷 복사 창에서 새로운 마스터 키를 선택하고 [복사]합니다.\n18. 복사된 EBS 스냅샷을 선택하고 작업에서 볼륨 생성을 선택합니다.\n19. 볼륨 생성 창에서 볼륨 구성 정보를 검토하고 [볼륨 생성]을 클릭합니다.\n20. 탐색 패널로 돌아가 볼륨을 클릭 합니다.\n21. 원래 EBS 볼륨 (AWS 관리 키로 암호화 됨)을 선택합니다.\n22. 대시 보드 상단 메뉴에서 볼륨 분리를 선택합니다.\n23. 볼륨 분리 창에서 [예, 분리]를 선택합니다.\n24. 새로 생성된 EBS 볼륨을 선택하고 작업에서 볼륨 연결을 선택합니다.\n26. 볼륨 연결 창에서 EC2 인스턴스 ID와 디바이스를 입력한 후 [연결]을 클릭합니다 .\n28. 하단 패널에서 설명 탭을 선택하고 KMS 키 별칭 값을 확인하여 생성된 EBS 볼륨이 자체 CMK 고객 관리 키를 사용하는지 확인합니다.',
-    reference:
-      "https://www.cloudconformity.com/knowledge-base/aws/KMS/kms-customer-master-key-cmk-in-use.html\nhttps://docs.aws.amazon.com/ko_kr/kms/latest/developerguide/concepts.html",
-    provider: "AWS",
-  },
-  {
     classification: "서비스 관리",
-    index: "KMS_009",
+    index: "KMS_005",
     risk: "중",
     name: "웹 tier에 대해 AWS 계정에 생성된 Amazon KMS 고객 마스터 키(CMK)가 있는지 확인하시오.",
     description:
@@ -2082,7 +2052,7 @@ export const AWSChecklist = [
   },
   {
     classification: "서비스 관리",
-    index: "KMS_007",
+    index: "KMS_006",
     risk: "중",
     name: "앱 tier에 대해 AWS 계정에 생성된 Amazon KMS 고객 마스터 키(CMK)가 있는지 확인하시오.",
     description:
@@ -2097,7 +2067,7 @@ export const AWSChecklist = [
   },
   {
     classification: "서비스 관리",
-    index: "KMS_008",
+    index: "KMS_007",
     risk: "중",
     name: "데이터 tier에 대해 AWS 계정에 생성된 Amazon KMS 고객 마스터 키(CMK)가 있는지 확인하시오.",
     description:
@@ -2128,7 +2098,7 @@ export const AWSChecklist = [
   {
     classification: "접근 관리",
     index: "RDS_002",
-    risk: "중",
+    risk: "상",
     name: "DB 스냅샷에 퍼블릭으로 액세스할 수 없는지 확인하시오",
     description:
       "DB snapshot visibility(DB 스냅샷 가시성)를 Public(퍼블릭)으로 설정한 경우 모든 AWS 계정은 수동 DB 스냅샷에서 DB 인스턴스를 복원하고 사용자 데이터에 액세스할 수 있습니다. 프라이빗 정보가 포함된 수동 DB 스냅샷을 Public(퍼블릭)으로 공유하지 마십시오.",
@@ -2173,7 +2143,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "RDS_005",
-    risk: "중",
+    risk: "하",
     name: "DB 인스턴스 수준 이벤트에 대해 RDS 이벤트 알림 구독이 활성화되어 있는지 확인하시오",
     description:
       "Amazon RDS는 Amazon RDS 이벤트 발생 시 Amazon Simple Notification Service(Amazon SNS)를 사용하여 알림 서비스를 제공합니다. 이 서비스는 AWS 리전에 따라 Amazon SNS가 지원하는 알림 메시지 형식에 따라 이메일, 문자 또는 HTTP 엔드포인트 호출 등이 될 수 있습니다.\nDB 인스턴스, DB 스냅샷, DB 파라미터 그룹, DB 보안 그룹 등의 이벤트가 발생했을 때 이에 대한 알림 메시지를 받을 수 있습니다.",
@@ -2218,7 +2188,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "RDS_008",
-    risk: "중",
+    risk: "하",
     name: "RDS 인스턴스에 Storage AutoScaling 기능이 활성화되어 있는지 확인하시오",
     description:
       "워크로드가 예측할 수 없는 경우에는 Amazon RDS DB 인스턴스에서 스토리지 Autoscaling을 활성화할 수 있습니다. 스토리지 Autoscaling이 활성화된 상태에서 Amazon RDS가 데이터베이스의 여유 공간이 부족한 것을 감지하면 자동으로 스토리지를 확장합니다. Amazon RDS는 다음과 같은 요인이 적용될 때 Autoscaling이 활성화된 DB 인스턴스에서 스토리지 수정을 시작합니다.\n- 사용 가능한 여유 공간이 할당 된 인스턴스 스토리지의 10 % 미만인 경우\n- 낮은 저장 상태는 최소 5 분 동안 지속된 경우\n- 마지막 스토리지 수정 이후 최소 6 시간이 지난 경우\n추가 스토리지는 다음 중 더 큰 값만큼 증가합니다.\n- 5GiB\n- 현재 할당된 스토리지의 10퍼센트\n- 지난 시간 동안의 FreeStorageSpace 지표 변화에 따라 7시간의 스토리지 증가 예측 지표",
@@ -2233,7 +2203,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "RDS_009",
-    risk: "중",
+    risk: "하",
     name: "디스크 공간이 부족한 것으로 보이는 RDS DB 인스턴스를 식별하고 이를 확장하는지 확인하시오",
     description:
       "I/O 크레딧 밸런스의 고갈로 인해 스토리지 성능이 종종 기본 수준으로 제한됩니다. 그렇다면, 더 높은 기준 성능 수준의 범용 SSD 추가 할당을 고려하십시오. 또는 IOPS 성능을 유지해야 하는 워크로드인 경우에는 Provisioned IOPS 스토리지로 전환하는 것도 좋습니다.",
@@ -2248,7 +2218,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "RDS_010",
-    risk: "중",
+    risk: "하",
     name: "RDS 인스턴스가 범용 SSD를 사용하고 있는지 확인하시오",
     description:
       "Amazon RDS에서는 범용 SSD(gp2라고도 함), 프로비저닝된 IOPS SSD(io1이라고도 함), 마그네틱(표준이라고도 함) 등 세 가지 스토리지 유형을 제공합니다. 범용 SSD 볼륨은 광범위한 워크로드에 이상적인 비용 효율적 스토리지를 제공합니다. 이러한 볼륨은 시간을 연장할 경우 3,000IOPS의 버스트 기능까지 지원되어 지연 시간이 한 자릿수 밀리초에 불과합니다. 이러한 볼륨에 대한 기준 성능은 볼륨의 크기에 의해 결정됩니다. 따라서 범용 SSD를 권장합니다.",
@@ -2278,7 +2248,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "RDS_012",
-    risk: "중",
+    risk: "하",
     name: "과도하게 사용되는 것으로 보이는 RDS DB 인스턴스를 식별하고 업그레이드하는지 확인하시오",
     description:
       "지난 14일 동안 실행된 적이 있는 Amazon Elastic Compute Cloud(EC2) 인스턴스를 점검하고, 4일 이상 일일 CPU 사용률이 90%를 넘은 경우 알립니다. 사용률이 일관되게 높다는 것은 성능이 최적화되어 있고 안정적임을 나타낼 수 있지만 애플리케이션의 리소스가 충분하지 않다는 의미일 수도 있습니다.",
@@ -2308,7 +2278,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "RDS_014",
-    risk: "중",
+    risk: "상",
     name: "RDS 프로덕션 DB가 사용된 RDS DB 엔진 유형의 마스터 사용자 이름을 기본값으로 사용하지 않았는지 확인하시오",
     description:
       "* 근거 부족 (Cloud Conformity)\n'awsuser'가 RDS 데이터베이스 마스터 사용자 이름에 대한 Amazon의 예 (기본값)이므로 많은 AWS 고객이 프로덕션의 RDS 데이터베이스에이 사용자 이름을 사용하므로 악의적인 사용자가 이 정보를 유리하게 사용하고 'awsuser'를 자주 사용하려고 할 수 있습니다. 대신 고유한 영숫자 문자열을 마스터 사용자의 로그인 ID로 정의해야합니다.",
@@ -2323,7 +2293,7 @@ export const AWSChecklist = [
   {
     classification: "서비스 관리",
     index: "RDS_015",
-    risk: "중",
+    risk: "상",
     name: "DB 인스턴스에서 SSL/TLS 연결을 사용하는지 확인하시오",
     description:
       "SQL Server 및 PostgreSQL 인스턴스에 대한 모든 연결은 기본적으로 강제 SSL 파라미터를 활성화하는 RDS 전송 암호화 기능에서 제공하는 암호화를 사용해야합니다.\n애플리케이션에서 SSL(Secure Socket Layer) 또는 TLS(전송 계층 보안)를 사용하여 MySQL, MariaDB, SQL Server, Oracle, PostgreSQL을 실행하는 DB 인스턴스에 대한 연결을 암호화할 수 있습니다.",
@@ -2383,7 +2353,7 @@ export const AWSChecklist = [
   {
     classification: "백업 관리",
     index: "RDS_019",
-    risk: "중",
+    risk: "하",
     name: "MySQL 호환성 데이터베이스 클러스터가있는 Amazon Aurora에 역 추적 기능이 활성화되어 있는지 확인하시오",
     description:
       "MySQL과 호환되는 Amazon Aurora에서는 백업에서 데이터를 복구하지 않고도 특정 시간으로 DB 클러스터를 되감을 수 있습니다.\n기존의 백업 및 복원에 비해 실수를 쉽게 실행 취소할 수 있고, DB 클러스터를 빠르게 역추적할 수 있으며, 이전 데이터 변경 사항을 확인할 수 있다는 장점이 있습니다.",
@@ -2398,7 +2368,7 @@ export const AWSChecklist = [
   {
     classification: "백업 관리",
     index: "RDS_020",
-    risk: "중",
+    risk: "하",
     name: "RDS DB 인스턴스의 스냅샷을 Amazon Backup 서비스를 사용해 관리하는지 확인하시오.",
     description:
       "AWS Backup을 사용하면 AWS 서비스에 대한 데이터 보호를 중앙 집중화하고 자동화할 수 있습니다. AWS Backup은 백업할 AWS 리소스를 구성 및 감사하고, 백업 일정을 자동화하고, 보존 정책을 설정하고, 모든 최신 백업 및 복원 활동을 모니터링할 수 있는 중앙 위치를 제공하므로 AWS 스토리지 볼륨, 데이터베이스 및 파일 시스템을 간단하게 보호할 수 있습니다. 현재 여러 AWS 서비스에서 EBS 스냅샷, RDS 스냅샷, Amazon FSx 백업, DynamoDB 백업 및 Storage Gateway 스냅샷과 같은 백업 기능을 제공하여 데이터를 보호할 수 있도록 지원하고 있습니다.",
@@ -2413,7 +2383,7 @@ export const AWSChecklist = [
   {
     classification: "패치 관리",
     index: "RDS_021",
-    risk: "중",
+    risk: "하",
     name: "RDS 인스턴스의 자동 마이너 업그레이드 기능을 활성화되어 있는지 확인하시오",
     description:
       "Amazon RDS가 데이터베이스의 DB 엔진 버전을 자동으로 업그레이드하도록 하려면 데이터베이스에 대해 마이너 버전 업그레이드를 활성화하면 됩니다.",
@@ -2428,7 +2398,7 @@ export const AWSChecklist = [
   {
     classification: "패치 관리",
     index: "RDS_022",
-    risk: "중",
+    risk: "하",
     name: "프로비저닝 된 모든 RDS 데이터베이스 인스턴스가 최신 세대의 인스턴스 클래스를 사용하고 있는지 확인하시오",
     description:
       "AWS는 이전 세대 인스턴스에 맞게 애플리케이션을 최적화했으나 아직 업그레이드하지 못한 사용자를 위해 이전 세대 DB 인스턴스를 제공합니다. 최신 세대 인스턴스를 사용하면 더 나은 성능, 비용, 지원 등의 이점이 있으므로 이전 세대를 사용하는 경우 업그레이드를 권장합니다.\n(이전 세대의 종류는 AWS docs 참조)",
@@ -2443,7 +2413,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "RDS_023",
-    risk: "하",
+    risk: "상",
     name: "AES-256 수준 암호화를 사용하여 RDS 인스턴스의 암호화를 보장하는지 확인하시오",
     description:
       "Amazon RDS 암호화를 사용해 DB 인스턴스와 저장된 스냅샷을 보호합니다. Amazon RDS 암호화는 업계 표준 AES-256 암호화 알고리즘을 사용해 DB 인스턴스의 호스팅 서버에 저장된 데이터를 암호화합니다. \nAmazon RDS 암호화된 DB 인스턴스는 기본 스토리지에 대한 무단 액세스로부터 데이터의 보안을 유지해 추가 계층의 데이터 보호를 제공합니다. 클라우드에 배포된 애플리케이션의 데이터 보호를 강화하고 휴면 상태의 데이터 암호화를 위한 규정 준수 요구 사항을 만족하기 위해 Amazon RDS 암호화를 사용할 수 있습니다.\n\n* AWS 관리형 키가 아닌 고객관리형 키 사용할것!",
@@ -2458,7 +2428,7 @@ export const AWSChecklist = [
   {
     classification: "암호화",
     index: "RDS_024",
-    risk: "하",
+    risk: "상",
     name: "AES-256 수준 암호화를 사용하여 RDS 스냅샷의 암호화를 보장하는지 확인하시오",
     description:
       "Amazon RDS 암호화를 사용해 DB 인스턴스와 저장된 스냅샷을 보호합니다. Amazon RDS 암호화는 업계 표준 AES-256 암호화 알고리즘을 사용해 DB 인스턴스의 호스팅 서버에 저장된 데이터를 암호화합니다. \nAmazon RDS 암호화된 DB 인스턴스는 기본 스토리지에 대한 무단 액세스로부터 데이터의 보안을 유지해 추가 계층의 데이터 보호를 제공합니다. 클라우드에 배포된 애플리케이션의 데이터 보호를 강화하고 휴면 상태의 데이터 암호화를 위한 규정 준수 요구 사항을 만족하기 위해 Amazon RDS 암호화를 사용할 수 있습니다.",
