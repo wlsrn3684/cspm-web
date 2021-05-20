@@ -163,7 +163,7 @@ export default function ScanDetail({ location }: any): JSX.Element {
       Swal.fire({
         icon: "error",
         title: "로그인 에러",
-        text: "로그인후에 이용해주세요.",
+        text: "로그인 후에 이용해주세요.",
         heightAuto: false,
       }).then(() => {
         window.location.href = "/login";

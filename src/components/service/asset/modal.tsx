@@ -115,6 +115,7 @@ export default function Modal(props: IModalProps) {
             id="filled-required"
             label="accessKey"
             variant="filled"
+            type="password"
             value={info.access_key}
             className={classes.input}
             onChange={(event: React.ChangeEvent<{ value: unknown }>) => {
@@ -131,6 +132,7 @@ export default function Modal(props: IModalProps) {
             id="filled-required"
             label="secretKey"
             variant="filled"
+            type="password"
             value={info.secret_key}
             className={classes.input}
             onChange={(event: React.ChangeEvent<{ value: unknown }>) => {
