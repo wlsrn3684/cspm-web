@@ -453,7 +453,20 @@ export default function Inspection() {
                             accessKey: keyData.accessKey,
                             secretKey: keyData.secretKey,
                             regionName: keyData.region,
-                            services: ["EC2", "IAM", "RDS", "EBS", "S3"],
+                            services: [
+                                  "EC2",
+                                  "IAM",
+                                  "RDS",
+                                  "EBS",
+                                  "S3",
+                                  "CloudFront",
+                                  "CloudWatch",
+                                  "CloudTrail",
+                                  "Lambda",
+                                  "Cost",
+                                  "KMS",
+                                  "VPC",
+                                ],
                           };
 
                           await fetch(
