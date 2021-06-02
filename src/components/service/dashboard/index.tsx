@@ -267,7 +267,7 @@ export default function Dashboard(): JSX.Element {
   const getVulnList = async () => {
     let vuln_List: IVulnList[] = [];
 
-    await fetch(`${API_SERVER_URL}/assessment-results?historyId=${historyId}?result=N`)
+    await fetch(`${API_SERVER_URL}/assessment-results?historyId=${historyId}&result=N`)
       .then((res3) => res3.json())
       .then(async (res3) => {
         if (Array.isArray(res3)) {
